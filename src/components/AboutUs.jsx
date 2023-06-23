@@ -1,7 +1,7 @@
 const AboutUs = () => {
   return (
     <div className="text-center" id="about-us">
-      <h2 className="p-1 blue-background">Quiénes Somos</h2>
+      <h2 className="p-1 blue-background">Quiénes somos</h2>
       <div className="p-3">
         <p>
           <span className="bold">Dawer Sabores</span> es un emprendimiento que
