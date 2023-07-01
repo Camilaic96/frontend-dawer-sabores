@@ -32,12 +32,12 @@ const CardsCategories = () => {
     },
   ];
   return (
-    <div id="container-cards">
+    <div id="container-cards" className="row">
       {cards.map((card) => (
         <a href="" className="card">
           {/* AGREGAR ENLACE A  */}
           <div className="card-body">
-            <p className="bold card-text">{card.category}</p>
+            <p className="bold card-text text-uppercase">{card.category}</p>
           </div>
           <img src={card.image} className="card-img" alt={card.category} />
         </a>

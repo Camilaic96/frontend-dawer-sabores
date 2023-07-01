@@ -1,6 +1,6 @@
 const FAQs = () => {
   return (
-    <div className="m-5 text-center" id="faqs">
+    <div className="m-5 text-center col-md-7" id="faqs">
       <h2>¿Cómo realizo mi pedido?</h2>
       <div className="text-start">
         <div className="d-flex m-3">
@@ -41,7 +41,9 @@ const FAQs = () => {
         </div>
       </div>
       <a href="https://wa.me/+5491154998486" rel="noreferrer" target="_blank">
-        <p className="text-end">¿Tenés alguna otra duda? Consultanos</p>
+        <p className="text-end">
+          ¿Tenés alguna otra duda? <span className="bold">Consultanos</span>
+        </p>
       </a>
     </div>
   );

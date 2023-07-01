@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="container-redes">
         <div>
           <img src="img/icons/email-blue.png" alt="email" className="redes" />
-          <p>dawersabores@gmail.com</p>
+          <p>info@dawersabores.com.ar</p>
         </div>
         <a
           href="https://www.facebook.com/dawersabores"

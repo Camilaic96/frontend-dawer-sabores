@@ -10,6 +10,7 @@ function App() {
         <Header />
         <Routes>
           <Route path={"/"} element={<Home />} />
+          {/*<Route path={"/category"} element={< />} /> */}
           {/* categories */}
           {/* cart */}
         </Routes>
