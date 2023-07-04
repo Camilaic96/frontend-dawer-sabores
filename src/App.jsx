@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/Home.jsx";
 import Footer from "./components/Footer.jsx";
 import Header from "./components/Header.jsx";
+import Categories from "./components/Categories.jsx";
 
 function App() {
   return (
@@ -10,8 +11,7 @@ function App() {
         <Header />
         <Routes>
           <Route path={"/"} element={<Home />} />
-          {/*<Route path={"/category"} element={< />} /> */}
-          {/* categories */}
+          <Route path={"/productos/:id"} element={<Categories />} />
           {/* cart */}
         </Routes>
         <Footer />

@@ -21,22 +21,22 @@ const NavBar = () => {
         >
           <ul className="navbar-nav me-auto mb-2 mb-lg-0 justify-content-between px-5">
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <a className="nav-link nav-link-header" href="#">
                 Productos
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <a className="nav-link nav-link-header" href="#">
                 Quiénes somos
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <a className="nav-link nav-link-header" href="#">
                 ¿Cómo hacer un pedido?
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">
+              <a className="nav-link nav-link-header" href="#">
                 Contacto
               </a>
             </li>
@@ -46,7 +46,7 @@ const NavBar = () => {
       <div className="col-md-4 d-flex flex-direction-column justify-content-evenly px-5">
         <form className="d-flex col-md-10" role="search">
           <button className="btn" type="submit">
-            <img src="img/icons/search-red.png" alt="search icon" />
+            <img src={"../img/icons/search-red.png"} alt="search icon" />
           </button>
           <input
             className="form-control me-2 filter"
@@ -55,7 +55,7 @@ const NavBar = () => {
           />
         </form>
         <button className="btn col-md-2" type="submit">
-          <img src="img/icons/cart-red.png" alt="cart icon" />
+          <img src={"../img/icons/cart-red.png"} alt="cart icon" />
         </button>
       </div>
     </nav>

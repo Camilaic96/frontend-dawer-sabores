@@ -8,7 +8,11 @@ const Footer = () => {
       </p>
       <div className="container-redes">
         <div>
-          <img src="img/icons/email-blue.png" alt="email" className="redes" />
+          <img
+            src={"../img/icons/email-blue.png"}
+            alt="email"
+            className="redes"
+          />
           <p>info@dawersabores.com.ar</p>
         </div>
         <a
@@ -17,7 +21,7 @@ const Footer = () => {
           target="_blank"
         >
           <img
-            src="img/icons/facebook-blue.png"
+            src={"../img/icons/facebook-blue.png"}
             alt="Facebook"
             className="redes"
           />
@@ -25,7 +29,7 @@ const Footer = () => {
         </a>
         <a href="https://wa.me/+5491154998486" rel="noreferrer" target="_blank">
           <img
-            src="img/icons/whatsapp-blue.png"
+            src={"../img/icons/whatsapp-blue.png"}
             alt="Whatsapp"
             className="redes"
           />
@@ -37,7 +41,7 @@ const Footer = () => {
           target="_blank"
         >
           <img
-            src="img/icons/instagram-blue.png"
+            src={"../img/icons/instagram-blue.png"}
             alt="Instagram"
             className="redes"
           />

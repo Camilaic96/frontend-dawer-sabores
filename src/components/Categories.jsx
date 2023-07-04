@@ -1,7 +1,8 @@
-import { NavLink } from "react-router-dom";
+import NavProducts from "./NavProducts";
+import { useParams } from "react-router-dom";
 
-const CardsCategories = () => {
-  const cards = [
+const Categories = () => {
+  const categories = [
     {
       id: "vinos-y-bebidas",
       category: "Vinos y bebidas",
@@ -45,18 +46,33 @@ const CardsCategories = () => {
       text: "Elevá tu experiencia descubriendo nuestra sección especial  de panificados para acompañar tus comidas. Cada producto es seleccionado por su calidad y sabor inigualables. Además de insumos especiales para profesionales  de la panadería.",
     },
   ];
+  const { id } = useParams();
+  const objActive = categories.find((category) => category.id === id);
+
+  const backgroundImageStyle = {
+    backgroundImage: `url(${objActive.image})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+  };
   return (
-    <div id="container-cards" className="row">
-      {cards.map((card) => (
-        <NavLink to={card.link} className="card" id={card.id}>
-          <div className="card-body">
-            <p className="bold card-text text-uppercase">{card.category}</p>
-          </div>
-          <img src={card.image} className="card-img" alt={card.category} />
-        </NavLink>
-      ))}
+    <div>
+      <NavProducts />
+      <div style={backgroundImageStyle} className="p-5">
+        <p className="bold text-light fs-4">{objActive.text}</p>
+      </div>
+      <div className="d-flex justify-content-end p-4">
+        <button className="btn-filter bold">
+          Filtrar{" "}
+          <img
+            src={"../img/icons/filter-blue.png"}
+            alt="filter icon"
+            width={18}
+          />
+        </button>
+      </div>
+      <p>lista de productos</p>
     </div>
   );
 };
 
-export default CardsCategories;
+export default Categories;

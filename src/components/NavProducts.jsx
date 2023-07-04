@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom";
-
-const CardsCategories = () => {
-  const cards = [
+const NavProducts = () => {
+  const categories = [
     {
       id: "vinos-y-bebidas",
       category: "Vinos y bebidas",
@@ -46,17 +45,38 @@ const CardsCategories = () => {
     },
   ];
   return (
-    <div id="container-cards" className="row">
-      {cards.map((card) => (
-        <NavLink to={card.link} className="card" id={card.id}>
-          <div className="card-body">
-            <p className="bold card-text text-uppercase">{card.category}</p>
+    <div>
+      <nav className="navbar navbar-expand-lg bold p-3 mt-3">
+        <div className="col-md-12">
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div
+            className="collapse navbar-collapse row"
+            id="navbarSupportedContent"
+          >
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0 justify-content-around">
+              {categories.map((category) => (
+                <li className="nav-item">
+                  <NavLink to={category.link} className={"nav-link-products"}>
+                    {category.category}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
           </div>
-          <img src={card.image} className="card-img" alt={card.category} />
-        </NavLink>
-      ))}
+        </div>
+      </nav>
     </div>
   );
 };
 
-export default CardsCategories;
+export default NavProducts;
