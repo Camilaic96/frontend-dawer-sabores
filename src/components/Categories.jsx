@@ -1,4 +1,5 @@
 import NavProducts from "./NavProducts";
+import ItemListContainer from "./ItemListContainer";
 import { useParams } from "react-router-dom";
 
 const Categories = () => {
@@ -7,6 +8,7 @@ const Categories = () => {
       id: "vinos-y-bebidas",
       category: "Vinos y bebidas",
       image: "../img/products/vinos-y-bebidas.png",
+      backgroundImage: "../img/products/categories/vinos-y-bebidas.png",
       link: "/productos/vinos-y-bebidas",
       text: "Descubre nuestra amplia selección de vinos y bebidas de alta calidad, cuidadosamente seleccionados para satisfacer los paladares más exigentes",
     },
@@ -14,6 +16,7 @@ const Categories = () => {
       id: "frutos-y-cereales",
       category: "Frutos y cereales",
       image: "../img/products/frutos-y-cereales.png",
+      backgroundImage: "../img/products/categories/frutos-y-cereales.png",
       link: "/productos/frutos-y-cereales",
       text: "Encuentra una gran variedad de frutos secos y cereales para complementar tu alimentación y satisfacer tus antojos. Nuestros productos son seleccionados cuidadosamente para asegurar su frescura y sabor.",
     },
@@ -21,6 +24,7 @@ const Categories = () => {
       id: "aceites-y-acetos",
       category: "Aceites y acetos",
       image: "../img/products/aceites-y-acetos.png",
+      backgroundImage: "../img/products/categories/aceites-y-acetos.png",
       link: "/productos/aceites-y-acetos",
       text: "Descubre nuestra selección para agregar un toque de sabor y elegancia a tus comidas. Ofrecemos una amplia variedad de opciones para satisfacer cualquier paladar. Además, nuestros productos son seleccionados cuidadosamente para garantizar su calidad y frescura.",
     },
@@ -28,6 +32,7 @@ const Categories = () => {
       id: "especias-y-condimentos",
       category: "Especias y condimentos",
       image: "../img/products/especias-y-condimentos.png",
+      backgroundImage: "../img/products/categories/especias-y-condimentos.png",
       link: "/productos/especias-y-condimentos",
       text: "Explorá nuestra amplia selección de especias y condimentos de alta calidad para darle sabor a tus platos favoritos. Tenemos todo lo que necesitas para transformar tus comidas en experiencias culinarias únicas.",
     },
@@ -35,6 +40,7 @@ const Categories = () => {
       id: "dulces-y-encurtidos",
       category: "Dulces y encurtidos",
       image: "../img/products/dulces-y-encurtidos.png",
+      backgroundImage: "../img/products/categories/dulces-y-encurtidos.png",
       link: "/productos/dulces-y-encurtidos",
       text: "Selección de dulces, mermeladas y conservas con elaborados con ingredientes frescos y naturales, para ofrecerte un sabor único y delicioso. ",
     },
@@ -42,6 +48,7 @@ const Categories = () => {
       id: "panificados-e-insumos",
       category: "Panificados e insumos",
       image: "../img/products/panificados-e-insumos.png",
+      backgroundImage: "../img/products/categories/panificados-e-insumos.png",
       link: "/productos/panificados-e-insumos",
       text: "Elevá tu experiencia descubriendo nuestra sección especial  de panificados para acompañar tus comidas. Cada producto es seleccionado por su calidad y sabor inigualables. Además de insumos especiales para profesionales  de la panadería.",
     },
@@ -50,14 +57,14 @@ const Categories = () => {
   const objActive = categories.find((category) => category.id === id);
 
   const backgroundImageStyle = {
-    backgroundImage: `url(${objActive.image})`,
+    backgroundImage: `url(${objActive.backgroundImage})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
   };
   return (
     <div>
       <NavProducts />
-      <div style={backgroundImageStyle} className="p-5">
+      <div style={backgroundImageStyle} className="p-4">
         <p className="bold text-light fs-4">{objActive.text}</p>
       </div>
       <div className="d-flex justify-content-end p-4">
@@ -70,7 +77,7 @@ const Categories = () => {
           />
         </button>
       </div>
-      <p>lista de productos</p>
+      <ItemListContainer categoria={objActive.id} />
     </div>
   );
 };

@@ -1,5 +1,3 @@
-// import CartWidget from '../components/CartWidget';
-
 const NavBar = () => {
   return (
     <nav className="navbar navbar-expand-lg bold">
@@ -26,17 +24,17 @@ const NavBar = () => {
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link nav-link-header" href="#">
+              <a className="nav-link nav-link-header" href="#about-us">
                 Quiénes somos
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link nav-link-header" href="#">
+              <a className="nav-link nav-link-header" href="#faqs">
                 ¿Cómo hacer un pedido?
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link nav-link-header" href="#">
+              <a className="nav-link nav-link-header" href="#footer">
                 Contacto
               </a>
             </li>
