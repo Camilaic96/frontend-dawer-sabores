@@ -103,47 +103,60 @@ const ItemListContainer = ({ categoria }) => {
   return (
     <div className="p-3">
       {Object.keys(groupedProducts).map((clasificacion) => (
-        <div key={clasificacion}>
+        <div key={clasificacion} className="mb-5">
           <h4 className="title-classification bold">{clasificacion}</h4>
           <div>
             <table className="table">
-              <thead>
-                <tr>
-                  <th scope="col" className="align-middle prod-classification">
-                    Nombre de producto
-                  </th>
-                  <th scope="col" className="align-middle item-classification">
-                    | Variedad/Varietal
-                  </th>
-                  <th scope="col" className="align-middle item-classification">
-                    | Presentación
-                  </th>
-                  <th scope="col">&nbsp;</th>
-                </tr>
-              </thead>
               <tbody>
                 {groupedProducts[clasificacion].map((product) => (
                   <tr key={product.nombre}>
                     <td
                       scope="col"
                       className="align-middle prod-classification bold"
+                      colSpan={3}
                     >
                       {product.nombre}
                     </td>
                     <td
                       scope="col"
                       className="align-middle item-classification"
+                      colSpan={3}
                     >
                       | {product.variedad}
                     </td>
                     <td
                       scope="col"
                       className="align-middle item-classification"
+                      colSpan={3}
                     >
                       | {product.presentacion}
                     </td>
-                    <td>
-                      <div>botones</div>
+                    <td
+                      scope="col"
+                      className="align-middle item-classification container-name-product"
+                      colSpan={3}
+                    >
+                      <div className="d-flex justify-content-end align-items-center">
+                        <button className="btn-products">
+                          <img
+                            src={"../img/icons/minus-red.png"}
+                            alt="minus sign"
+                          />
+                        </button>
+                        <button className="btn-products">0</button>
+                        <button className="btn-products">
+                          <img
+                            src={"../img/icons/plus-red.png"}
+                            alt="plus sign"
+                          />
+                        </button>
+                        <button className="btn-products">
+                          <img
+                            src={"../img/icons/check-box-red.png"}
+                            alt="check box"
+                          />
+                        </button>
+                      </div>
                     </td>
                   </tr>
                 ))}

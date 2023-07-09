@@ -188,10 +188,11 @@ a:hover {
 .nav-link-products {
 	color: #138192;
 	text-transform: uppercase;
+	padding: 5px 50px;
 }
 
 .nav-link-products:hover {
-	color: #DF4948;
+	color: #138192;
 }
 
 .btn-filter {
@@ -212,4 +213,126 @@ a:hover {
 
 .item-classification {
 	color: rgb(82, 82, 82);
+}
+
+.nav-link-header.active {
+	text-decoration: underline;
+}
+
+.nav-link-products.active {
+	border-bottom: #DF4948 5px solid;
+	color: #DF4948;
+}
+
+.text-categories {
+	color: #fff;
+	text-shadow: 0 0 3px black;
+	font-size: 22px;
+}
+
+.table {
+	table-layout: fixed;
+	width: 100%;
+}
+
+.table td {
+	border-bottom: 1px solid #DF4948;
+	padding: 15px;
+}
+
+
+.btn-products {
+	border: 0;
+	background-color: #fff;
+	color: #DF4948;
+	margin: 0 3px;
+}
+
+.cart-list {
+	border: 5px solid #138192;
+	border-radius: 30px;
+	margin: 50px;
+	text-align: center;
+	padding: 50px;
+}
+
+.cart-title {
+	background-color: #fff;
+	color: #DF4948;
+	padding: 0 50px;
+	position: relative;
+	top: -95px;
+	display: inline-block;
+	font-size: 40px;
+}
+
+.form-container {
+	color: #DF4948;
+	margin: 50px;
+}
+
+#cart-form {
+	padding: 20px;
+}
+
+.body-cart-form {
+	padding: 50px;
+	background-color: #039ca133;
+	border-radius: 10px;
+}
+
+.body-cart-form input {
+	border: 0;
+	border-bottom: 1px solid #DF4948;
+	background-color: #039ca100;
+	padding: 16px;
+}
+
+.body-cart-form input::placeholder {
+	color: #138192;
+	padding-left: 40px;
+}
+
+.input-with-icon-at {
+	padding-left: 30px;
+	background-image: url("../img/icons/at-red.png");
+	background-repeat: no-repeat;
+	background-position: 5px center;
+}
+
+.input-with-icon-user {
+	padding-left: 30px;
+	background-image: url("../img/icons/user-red.png");
+	background-repeat: no-repeat;
+	background-position: 5px center;
+}
+
+.input-with-icon-pencil {
+	padding-left: 30px;
+	background-image: url("../img/icons/pencil-red.png");
+	background-repeat: no-repeat;
+	background-position: 5px center;
+}
+
+.container-btn-cart-form {
+	display: flex;
+	justify-content: end;
+	padding: 20px 0;
+}
+
+.btn-cart-form {
+	margin: 10px;
+	padding: 10px 20px;
+	border: 1px solid #138192;
+	font-weight: bold;
+}
+
+.btn-cart-form-delete {
+	background-color: #039ca133;
+	color: #138192;
+}
+
+.btn-cart-form-submit {
+	background-color: #138192;
+	color: #fff;
 }

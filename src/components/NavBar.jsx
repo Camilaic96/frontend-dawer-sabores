@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 const NavBar = () => {
   return (
     <nav className="navbar navbar-expand-lg bold">
@@ -19,24 +20,27 @@ const NavBar = () => {
         >
           <ul className="navbar-nav me-auto mb-2 mb-lg-0 justify-content-between px-5">
             <li className="nav-item">
-              <a className="nav-link nav-link-header" href="#">
+              <NavLink
+                to={"../productos/vinos-y-bebidas"}
+                className={"nav-link nav-link-header"}
+              >
                 Productos
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link nav-link-header" href="#about-us">
+              <NavLink to={"/#about-us"} className={"nav-link nav-link-header"}>
                 Quiénes somos
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link nav-link-header" href="#faqs">
+              <NavLink to={"/#faqs"} className={"nav-link nav-link-header"}>
                 ¿Cómo hacer un pedido?
-              </a>
+              </NavLink>
             </li>
             <li className="nav-item">
-              <a className="nav-link nav-link-header" href="#footer">
+              <NavLink to={"/#footer"} className={"nav-link nav-link-header"}>
                 Contacto
-              </a>
+              </NavLink>
             </li>
           </ul>
         </div>
@@ -52,9 +56,9 @@ const NavBar = () => {
             aria-label="Search"
           />
         </form>
-        <button className="btn col-md-2" type="submit">
+        <NavLink to={"/carrito"}>
           <img src={"../img/icons/cart-red.png"} alt="cart icon" />
-        </button>
+        </NavLink>
       </div>
     </nav>
   );

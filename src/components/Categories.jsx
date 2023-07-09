@@ -57,15 +57,17 @@ const Categories = () => {
   const objActive = categories.find((category) => category.id === id);
 
   const backgroundImageStyle = {
-    backgroundImage: `url(${objActive.backgroundImage})`,
+    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${objActive.backgroundImage})`,
     backgroundSize: "cover",
     backgroundPosition: "center",
+    height: 150,
+    padding: 30,
   };
   return (
     <div>
       <NavProducts />
-      <div style={backgroundImageStyle} className="p-4">
-        <p className="bold text-light fs-4">{objActive.text}</p>
+      <div style={backgroundImageStyle}>
+        <p className="bold text-categories">{objActive.text}</p>
       </div>
       <div className="d-flex justify-content-end p-4">
         <button className="btn-filter bold">

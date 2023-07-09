@@ -46,7 +46,7 @@ const NavProducts = () => {
   ];
   return (
     <div>
-      <nav className="navbar navbar-expand-lg bold p-3 mt-3">
+      <nav className="navbar navbar-expand-lg bold">
         <div className="col-md-12">
           <button
             className="navbar-toggler"
@@ -63,7 +63,7 @@ const NavProducts = () => {
             className="collapse navbar-collapse row"
             id="navbarSupportedContent"
           >
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0 justify-content-around">
+            <ul className="navbar-nav mb-lg-0 justify-content-around">
               {categories.map((category) => (
                 <li className="nav-item">
                   <NavLink to={category.link} className={"nav-link-products"}>
