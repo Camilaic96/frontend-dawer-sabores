@@ -1,13 +1,13 @@
 const Footer = () => {
   return (
     <footer id="footer" className="blue-background">
-      <h2 className="bold">Contacto</h2>
+      <h2>Contacto</h2>
       <p>
         Podés conocernos y realizar tu consulta a través de nuestras redes.
         ¡Estamos para ayudarte!
       </p>
       <div className="container-redes">
-        <div>
+        <div className="col-6 col-md-3">
           <img
             src={"../img/icons/email-blue.png"}
             alt="email"
@@ -19,6 +19,7 @@ const Footer = () => {
           href="https://www.facebook.com/dawersabores"
           rel="noreferrer"
           target="_blank"
+          className="col-6 col-lg-3"
         >
           <img
             src={"../img/icons/facebook-blue.png"}
@@ -27,7 +28,12 @@ const Footer = () => {
           />
           <p>Dawer.sabores</p>
         </a>
-        <a href="https://wa.me/+5491154998486" rel="noreferrer" target="_blank">
+        <a
+          href="https://wa.me/+5491154998486"
+          rel="noreferrer"
+          target="_blank"
+          className="col-6 col-md-3"
+        >
           <img
             src={"../img/icons/whatsapp-blue.png"}
             alt="Whatsapp"
@@ -39,6 +45,7 @@ const Footer = () => {
           href="https://www.instagram.com/dawersabores"
           rel="noreferrer"
           target="_blank"
+          className="col-6 col-md-3"
         >
           <img
             src={"../img/icons/instagram-blue.png"}

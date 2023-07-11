@@ -86,7 +86,7 @@ const Cart = () => {
     },
   ];
   return (
-    <div>
+    <div className="offset-md-1 col-md-10">
       <div className="cart-list">
         <h2 className="cart-title">Mi lista</h2>
         <table className="table">
@@ -99,12 +99,10 @@ const Cart = () => {
                       <img
                         src={"../img/icons/check-box-checked-blue.png"}
                         alt="check box"
+                        className="mb-3"
                       />
                     </button>
-                    <p className="prod-classification bold">
-                      {" "}
-                      {product.nombre}
-                    </p>
+                    <p className="prod-classification"> {product.nombre}</p>
                   </div>
                 </td>
                 <td
@@ -144,31 +142,31 @@ const Cart = () => {
           </tbody>
         </table>
       </div>
-      <div className="row form-container">
-        <h4 className="bold">¡Último paso!</h4>
-        <p className="bold">
+      <div className="form-container">
+        <h4>¡Último paso!</h4>
+        <p>
           Dejanos tus datos para enviar el pedido. Serás redireccionado a
           Whatsapp para terminar de enviarlo.
         </p>
-        <form action="" id="cart-form">
+        <form action="" id="cart-form" className="row">
           <div className="body-cart-form">
-            <div className="d-flex justify-content-between">
+            <div>
               <input
                 type="text"
                 placeholder="Nombre y Apellido"
-                className="w-50 me-3 input-with-icon-user"
+                className="input-with-icon user col-12 col-lg-5"
               />
               <input
                 type="email"
                 placeholder="Correo electrónico"
-                className="w-50 ms-3 input-with-icon-at"
+                className="input-with-icon at col-12 offset-lg-2 col-lg-5"
               />
             </div>
 
             <input
               type="text"
               placeholder="Dejanos tu comentario"
-              className="w-100 mt-4 input-with-icon-pencil"
+              className="input-with-icon pencil col-12"
             />
           </div>
           <div className="container-btn-cart-form">

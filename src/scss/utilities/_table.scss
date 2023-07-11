@@ -1,0 +1,17 @@
+.table {
+	table-layout: fixed;
+	width: 100%;
+
+	& td {
+		padding: 15px;
+		border-bottom: 1px solid $colorRed;
+	}
+
+	& .btn-products {
+		margin: 0 10px;
+		background-color: #fff;
+		border: 0;
+		color: $colorRed;
+	}
+}
+

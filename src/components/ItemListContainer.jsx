@@ -103,39 +103,27 @@ const ItemListContainer = ({ categoria }) => {
   return (
     <div className="p-3">
       {Object.keys(groupedProducts).map((clasificacion) => (
-        <div key={clasificacion} className="mb-5">
-          <h4 className="title-classification bold">{clasificacion}</h4>
-          <div>
+        <div key={clasificacion} className="container-classification">
+          <h4 className="title-classification">{clasificacion}</h4>
+          <div className="body-classification">
             <table className="table">
               <tbody>
                 {groupedProducts[clasificacion].map((product) => (
                   <tr key={product.nombre}>
                     <td
                       scope="col"
-                      className="align-middle prod-classification bold"
+                      className="name-product-classification"
                       colSpan={3}
                     >
                       {product.nombre}
                     </td>
-                    <td
-                      scope="col"
-                      className="align-middle item-classification"
-                      colSpan={3}
-                    >
+                    <td scope="col" className="item-classification" colSpan={3}>
                       | {product.variedad}
                     </td>
-                    <td
-                      scope="col"
-                      className="align-middle item-classification"
-                      colSpan={3}
-                    >
+                    <td scope="col" className="item-classification" colSpan={3}>
                       | {product.presentacion}
                     </td>
-                    <td
-                      scope="col"
-                      className="align-middle item-classification container-name-product"
-                      colSpan={3}
-                    >
+                    <td scope="col" className="item-classification" colSpan={3}>
                       <div className="d-flex justify-content-end align-items-center">
                         <button className="btn-products">
                           <img
@@ -150,7 +138,7 @@ const ItemListContainer = ({ categoria }) => {
                             alt="plus sign"
                           />
                         </button>
-                        <button className="btn-products">
+                        <button className="btn-products ms-4">
                           <img
                             src={"../img/icons/check-box-red.png"}
                             alt="check box"

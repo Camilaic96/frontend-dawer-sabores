@@ -1,0 +1,72 @@
+.form-container {
+	margin-top: 50px;
+	padding: 30px;
+	color: $colorRed;
+
+	& h4, p {
+		font-weight: bold;
+	}
+
+	& #cart-form {
+		padding: 20px;
+
+		& .body-cart-form {
+			padding: 50px;
+			background-color: #039ca133;
+			border-radius: 10px;
+
+			& input {
+				padding: 16px;
+				background-color: #039ca100;
+				border: 0;
+				border-bottom: 1px solid $colorRed;
+			}
+
+			& input::placeholder {
+				padding-left: 40px;
+				color: $colorBlue;
+			}
+
+			& .input-with-icon {
+				padding-left: 30px;
+				background-repeat: no-repeat;
+				background-position: 5px center;
+			}
+
+			& .at {
+				background-image: url("../img/icons/at-red.png");
+			}
+			
+			& .user {
+				background-image: url("../img/icons/user-red.png");
+			}
+			
+			& .pencil {
+				background-image: url("../img/icons/pencil-red.png");
+			}
+		}
+	}
+
+	& .container-btn-cart-form {
+		display: flex;
+		justify-content: end;
+		padding: 20px 0;
+
+		& .btn-cart-form {
+			margin: 10px;
+			padding: 10px 20px;
+			border: 1px solid $colorBlue;
+			font-weight: bold;
+		}
+		
+		& .btn-cart-form-delete {
+			background-color: #039ca133;
+			color: $colorBlue;
+		}
+		
+		& .btn-cart-form-submit {
+			background-color: $colorBlue;
+			color: #fff;
+		}
+	}
+}

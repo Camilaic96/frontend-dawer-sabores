@@ -58,26 +58,47 @@ const Categories = () => {
 
   const backgroundImageStyle = {
     backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${objActive.backgroundImage})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    height: 150,
-    padding: 30,
   };
   return (
     <div>
       <NavProducts />
-      <div style={backgroundImageStyle}>
+      <div style={backgroundImageStyle} className="background-image">
         <p className="bold text-categories">{objActive.text}</p>
       </div>
-      <div className="d-flex justify-content-end p-4">
-        <button className="btn-filter bold">
-          Filtrar{" "}
-          <img
-            src={"../img/icons/filter-blue.png"}
-            alt="filter icon"
-            width={18}
-          />
-        </button>
+      <div className="container-filter">
+        <div class="d-flex justify-content-end">
+          <button
+            class="btn-filter"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseFilter"
+            aria-expanded="false"
+            aria-controls="collapseFilter"
+          >
+            Filtrar
+            <img
+              src="../img/icons/filter-blue.png"
+              alt="filter icon"
+              width="18"
+            />
+          </button>
+        </div>
+        <div class="d-flex justify-content-start">
+          <div class="collapse" id="collapseFilter">
+            <button class="btn-filter-item" type="button">
+              Cereales
+            </button>
+            <button class="btn-filter-item" type="button">
+              Cereales
+            </button>
+            <button class="btn-filter-item active" type="button">
+              Cereales
+            </button>
+            <button class="btn-filter-item" type="button">
+              Cereales
+            </button>
+          </div>
+        </div>
       </div>
       <ItemListContainer categoria={objActive.id} />
     </div>

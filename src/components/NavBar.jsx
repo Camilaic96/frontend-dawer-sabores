@@ -1,8 +1,26 @@
 import { NavLink } from "react-router-dom";
 const NavBar = () => {
+  const itemsNav = [
+    {
+      to: "../productos/vinos-y-bebidas",
+      title: "Productos",
+    },
+    {
+      to: "../about-us" /* "../#about-us" */,
+      title: "Quiénes somos",
+    },
+    {
+      to: "../faqs" /* "../#faqs" */,
+      title: "¿Cómo hacer un pedido?",
+    },
+    {
+      to: "../footer" /* "../#footer" */,
+      title: "Contacto",
+    },
+  ];
   return (
-    <nav className="navbar navbar-expand-lg bold">
-      <div className="col-md-8 px-5">
+    <nav className="navbar navbar-expand-lg row" id="navbar-header">
+      <div className="col-12 col-sm-6 col-lg-9">
         <button
           className="navbar-toggler"
           type="button"
@@ -18,34 +36,18 @@ const NavBar = () => {
           className="collapse navbar-collapse row"
           id="navbarSupportedContent"
         >
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0 justify-content-between px-5">
-            <li className="nav-item">
-              <NavLink
-                to={"../productos/vinos-y-bebidas"}
-                className={"nav-link nav-link-header"}
-              >
-                Productos
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink to={"/#about-us"} className={"nav-link nav-link-header"}>
-                Quiénes somos
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink to={"/#faqs"} className={"nav-link nav-link-header"}>
-                ¿Cómo hacer un pedido?
-              </NavLink>
-            </li>
-            <li className="nav-item">
-              <NavLink to={"/#footer"} className={"nav-link nav-link-header"}>
-                Contacto
-              </NavLink>
-            </li>
+          <ul className="navbar-nav mb-lg-0">
+            {itemsNav.map((item) => (
+              <li className="nav-item">
+                <NavLink to={item.to} className={"nav-link nav-link-header"}>
+                  {item.title}
+                </NavLink>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
-      <div className="col-md-4 d-flex flex-direction-column justify-content-evenly px-5">
+      <div className="col-12 col-sm-6 col-lg-3 d-flex">
         <form className="d-flex col-md-10" role="search">
           <button className="btn" type="submit">
             <img src={"../img/icons/search-red.png"} alt="search icon" />

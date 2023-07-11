@@ -1,0 +1,26 @@
+.container-classification {
+	margin: 10px;
+	vertical-align: middle;
+
+	& .title-classification {
+		font-weight: bold;
+		text-transform: uppercase;
+		color: $colorRed;
+	}
+
+	& .body-classification {
+		display: flex;
+		align-items: center;
+		padding: 20px;
+
+		& .name-product-classification {
+			font-weight: bold;
+			color: $colorBlue;
+			
+		}
+	
+		.item-classification {
+			color: rgb(82, 82, 82);
+		}
+	}
+}

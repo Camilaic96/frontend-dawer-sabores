@@ -45,37 +45,36 @@ const NavProducts = () => {
     },
   ];
   return (
-    <div>
-      <nav className="navbar navbar-expand-lg bold">
-        <div className="col-md-12">
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div
-            className="collapse navbar-collapse row"
-            id="navbarSupportedContent"
-          >
-            <ul className="navbar-nav mb-lg-0 justify-content-around">
-              {categories.map((category) => (
-                <li className="nav-item">
-                  <NavLink to={category.link} className={"nav-link-products"}>
-                    {category.category}
-                  </NavLink>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </div>
+    <nav className="navbar navbar-expand-lg" id="navbar-products">
+      <button
+        className="navbar-toggler m-3"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContentProducts"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span className="navbar-toggler-icon"></span>
+      </button>
+      <div
+        className="collapse navbar-collapse row"
+        id="navbarSupportedContentProducts"
+      >
+        <ul className="navbar-nav mb-lg-0">
+          {categories.map((category) => (
+            <li className="nav-item col-md-2 text-center">
+              <NavLink
+                to={category.link}
+                className={"nav-link nav-link-products"}
+              >
+                {category.category}
+              </NavLink>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </nav>
   );
 };
 

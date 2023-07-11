@@ -1,0 +1,25 @@
+#navbar-header {
+	margin: 10px;
+
+	& .navbar-nav{
+		align-items: center;
+		justify-content: space-around;
+		padding-right: 50px;
+		font-weight: bold;
+	
+		& .nav-link-header {
+			font-size: 22px;
+			color:$colorRed;
+		}
+		
+		.nav-link-header.active {
+			border-bottom: 4px solid $colorBlue;
+			color: $colorRed;
+		}
+	}
+	
+	& .filter{
+		border: 0;
+		border-bottom: 1px solid $colorRed;
+	}
+}

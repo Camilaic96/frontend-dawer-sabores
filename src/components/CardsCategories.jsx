@@ -45,8 +45,9 @@ const CardsCategories = () => {
       text: "Elevá tu experiencia descubriendo nuestra sección especial  de panificados para acompañar tus comidas. Cada producto es seleccionado por su calidad y sabor inigualables. Además de insumos especiales para profesionales  de la panadería.",
     },
   ];
+
   return (
-    <div id="container-cards" className="row">
+    <div id="container-cards-home" className="row">
       {cards.map((card) => (
         <NavLink to={card.link} className="card" id={card.id}>
           <div className="card-body">

@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+/* font-family: 'Kumbh Sans', sans-serif; */ 
+
+@import "normalize/reset";
+@import "utilities/variables";
+@import "components/header/index";
+@import "components/home/index";
+@import "components/categories/index";
+@import "components/cart/index";
+@import "components/footer";
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+	min-height: 100vh;
+    font-family: 'Kumbh Sans', sans-serif;
+	font-weight: 500;
+    font-size: 20px;
+}
+
+.blue-background {
+	background-image: url("../img/banner.png");
+	background-size: contain;
+	background-position: center;
+	position: relative;
+	width: 100%;
+}
+
+a {
+	color: #fff;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #fff;
+}

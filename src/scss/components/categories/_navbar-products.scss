@@ -1,0 +1,24 @@
+#navbar-products {
+	padding: 0;
+	& .navbar-nav {
+		display: flex;
+		padding: 0px 10px;
+		justify-content: space-between;
+		align-items: end;
+	
+		& .nav-link-products {
+			font-weight: bold;
+			color: $colorBlue;
+			text-transform: uppercase;
+		}
+		
+		& .nav-link-products:hover {
+			color: $colorBlue;
+		}
+		
+		& .nav-link-products.active {
+			border-bottom: $colorRed 5px solid;
+			color: $colorRed;
+		}
+	}
+}

@@ -1,0 +1,44 @@
+@import "./navbar-products";
+
+.background-image {
+	min-height: 150px;
+	background-size: cover;
+	background-position: center;
+	padding: 30px;
+
+	& .text-categories {
+		font-size: 22px;
+		color: #fff;
+		text-shadow: 0 0 3px black;
+	}
+}
+
+.container-filter {
+	padding: 30px;
+
+	& .btn-filter {
+		margin: 10px;
+		padding: 10px 16px;
+		border: 3px solid $colorBlue;
+		border-radius: 50px;
+		font-weight: bold;
+		color: $colorRed;
+	}
+
+	& .btn-filter-item {
+		margin: 10px 40px;
+		padding: 10px 50px;
+		background-color: #13819299;
+		border: 3px solid $colorBlue;
+		border-radius: 50px;
+		font-weight: 500;
+		color: #fff;
+	}
+	
+	& .btn-filter-item.active {
+		background-color: $colorBlue;
+	}
+}
+
+@import "./list-products";
+@import "../../utilities/table";
