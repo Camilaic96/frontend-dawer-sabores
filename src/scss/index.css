@@ -249,6 +249,16 @@
   color: #DF4948;
 }
 
+@media (max-width: 767px) {
+  .mobile-row .mobile-info {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .mobile-row .mobile-buttons {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
 .cart-list {
   min-height: 60vh;
   margin: 30px;
@@ -281,6 +291,16 @@
   background-color: #fff;
   border: 0;
   color: #DF4948;
+}
+@media (max-width: 767px) {
+  .cart-list .mobile-row .mobile-info {
+    display: block;
+    margin-bottom: 10px;
+  }
+  .cart-list .mobile-row .mobile-buttons {
+    display: flex;
+    justify-content: flex-end;
+  }
 }
 
 .form-container {

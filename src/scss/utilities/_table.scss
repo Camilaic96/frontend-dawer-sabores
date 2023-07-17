@@ -15,3 +15,14 @@
 	}
 }
 
+@media (max-width: 767px) {
+	.mobile-row .mobile-info {
+		display: block;
+		margin-bottom: 10px;
+	}
+
+	.mobile-row .mobile-buttons {
+		display: flex;
+		justify-content: flex-end;
+	}
+}

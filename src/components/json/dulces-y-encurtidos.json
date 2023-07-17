@@ -1,0 +1,418 @@
+[
+    {
+        "name": "Aceitunas verdes PREMIUM Frasco de vidrio x 500 gr.",
+        "variety": "Aceitunas verdes",
+        "presentation": "Frasco de vidrio x 500 gr.",
+        "producer": "Atilio Avena",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "aceitunas"
+    },
+    {
+        "name": "Aceitunas negras PREMIUM Frasco de vidrio x 500 gr.",
+        "variety": "Aceitunas negras",
+        "presentation": "Frasco de vidrio x 500 gr.",
+        "producer": "Atilio Avena",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "aceitunas"
+    },
+    {
+        "name": "Aceitunas verdes PREMIUM Frasco de vidrio X 200 gr.",
+        "variety": "Aceitunas verdes",
+        "presentation": "Frasco de vidrio X 200 gr.",
+        "producer": "Atilio Avena",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "aceitunas"
+    },
+    {
+        "name": "Aceitunas negras PREMIUM Frasco de vidrio x 200 gr.",
+        "variety": "Aceitunas negras",
+        "presentation": "Frasco de vidrio x 200 gr.",
+        "producer": "Atilio Avena",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "aceitunas"
+    },
+    {
+        "name": "Aceitunas verdes Descarozadas Frasco de vidrio x 150 gr.",
+        "variety": "Aceitunas verdes",
+        "presentation": "Frasco de vidrio x 150 gr.",
+        "producer": "Atilio Avena",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "aceitunas"
+    },
+    {
+        "name": "Aceitunas verdes Premium Frasco de vidrio x 2 Kg.",
+        "variety": "Aceitunas verdes",
+        "presentation": "Frasco de vidrio x 2 Kg.",
+        "producer": "Atilio Avena",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "aceitunas"
+    },
+    {
+        "name": "Pasta de Aceitunas Verdes (Atilio Avena) Frasco de vidrio x 170 gr.",
+        "variety": "Pasta de aceitunas verdes",
+        "presentation": "Frasco de vidrio x 170 gr.",
+        "producer": "Atilio Avena",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "aceitunas"
+    },
+    {
+        "name": "Pasta de Aceitunas Negras (Atilio Avena) Frasco de vidrio x 170 gr.",
+        "variety": "Pasta de aceitunas negras",
+        "presentation": "Frasco de vidrio x 170 gr.",
+        "producer": "Atilio Avena",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "aceitunas"
+    },
+    {
+        "name": "Aceitunas verdes en sachet x 100 gr.",
+        "variety": "Aceitunas verdes",
+        "presentation": "En sachet x 100 gr.",
+        "producer": "PERLAS MENDOCINAS",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "aceitunas"
+    },
+    {
+        "name": "Aceitunas verdes en sachet x 500 gr.",
+        "variety": "Aceitunas verdes",
+        "presentation": "En sachet x 500 gr.",
+        "producer": "PERLAS MENDOCINAS",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "aceitunas"
+    },
+    {
+        "name": "Aceitunas negras en sachet x 100 gr.",
+        "variety": "Aceitunas negras",
+        "presentation": "En sachet x 100 gr.",
+        "producer": "PERLAS MENDOCINAS",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "aceitunas"
+    },
+    {
+        "name": "Aceitunas verdes Descarozadas en sachet x 80 gr.",
+        "variety": "Aceitunas verdes descarozadas",
+        "presentation": "En sachet x 80 gr.",
+        "producer": "PERLAS MENDOCINAS",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "aceitunas"
+    },
+    {
+        "name": "Aceitunas verdes en sachet x 180 gr. (Doypack)",
+        "variety": "Aceitunas verdes",
+        "presentation": "En sachet x 180 gr. (Doypack)",
+        "producer": "PERLAS MENDOCINAS",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "aceitunas"
+    },
+    {
+        "name": "Aceitunas verdes en frasco PET x 500 gr. Nro. 0",
+        "variety": "Aceitunas verdes",
+        "presentation": "En frasco PET x 500 gr. Nro. 0",
+        "producer": "QUETEC",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "aceitunas"
+    },
+    {
+        "name": "Aceitunas negras en frasco PET x 500 gr. Nro. 0",
+        "variety": "Aceitunas negras",
+        "presentation": "En frasco PET x 500 gr. Nro. 0",
+        "producer": "QUETEC",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "aceitunas"
+    },
+    {
+        "name": "Aceitunas verdes en frasco PET x 500 gr. Nro. 1",
+        "variety": "Aceitunas verdes",
+        "presentation": "En frasco PET x 500 gr. Nro. 1",
+        "producer": "QUETEC",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "aceitunas"
+    },
+    {
+        "name": "Aceitunas negras en frasco PET x 500 gr. Nro. 1",
+        "variety": "Aceitunas negras",
+        "presentation": "En frasco PET x 500 gr. Nro. 1",
+        "producer": "QUETEC",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "aceitunas"
+    },
+    {
+        "name": "Aceitunas verdes en frasco PET x 1 Kg. Nro. 0",
+        "variety": "Aceitunas verdes",
+        "presentation": "En frasco PET x 1 Kg. Nro. 0",
+        "producer": "QUETEC",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "aceitunas"
+    },
+    {
+        "name": "Aceitunas negras en frasco PET x 1 Kg. Nro. 0",
+        "variety": "Aceitunas negras",
+        "presentation": "En frasco PET x 1 Kg. Nro. 0",
+        "producer": "QUETEC",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "aceitunas"
+    },
+    {
+        "name": "Aceitunas verdes en frasco PET x 1 Kg. Nro. 1",
+        "variety": "Aceitunas verdes",
+        "presentation": "En frasco PET x 1 Kg. Nro. 1",
+        "producer": "QUETEC",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "aceitunas"
+    },
+    {
+        "name": "Aceitunas negras en frasco PET x 1 Kg. Nro. 1",
+        "variety": "Aceitunas negras",
+        "presentation": "En frasco PET x 1 Kg. Nro. 1",
+        "producer": "QUETEC",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "aceitunas"
+    },
+    {
+        "name": "Aceitunas verdes grupo A (00) en baldes PVC x 5 Kg.",
+        "variety": "Aceitunas verdes",
+        "presentation": "En baldes PVC x 5Kg.",
+        "producer": "PERLAS MENDOCINAS",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "aceitunas"
+    },
+    {
+        "name": "Aceitunas negras grupo A (00) en baldes PVC x 5 Kg.",
+        "variety": "Aceitunas negras",
+        "presentation": "En baldes PVC x 5Kg.",
+        "producer": "PERLAS MENDOCINAS",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "aceitunas"
+    },
+    {
+        "name": "Aceitunas verdes grupo B (0) en baldes PVC x 5 Kg.",
+        "variety": "Aceitunas verdes",
+        "presentation": "En baldes PVC x 5Kg.",
+        "producer": "PERLAS MENDOCINAS",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "aceitunas"
+    },
+    {
+        "name": "Aceitunas negras grupo B (0) en baldes PVC x 5 Kg.",
+        "variety": "Aceitunas negras",
+        "presentation": "En baldes PVC x 5Kg.",
+        "producer": "PERLAS MENDOCINAS",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "aceitunas"
+    },
+    {
+        "name": "Aceitunas verdes grupo C (1) en baldes PVC x 5 Kg.",
+        "variety": "Aceitunas verdes",
+        "presentation": "En baldes PVC x 5Kg.",
+        "producer": "PERLAS MENDOCINAS",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "aceitunas"
+    },
+    {
+        "name": "Aceitunas negras grupo C (1) en baldes PVC x 5 Kg.",
+        "variety": "Aceitunas negras",
+        "presentation": "En baldes PVC x 5Kg.",
+        "producer": "PERLAS MENDOCINAS",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "aceitunas"
+    },
+    {
+        "name": "Aceitunas verdes grupo C (1) en baldes PVC x 3 Kg.",
+        "variety": "Aceitunas verdes",
+        "presentation": "En baldes PVC x 3Kg.",
+        "producer": "PERLAS MENDOCINAS",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "aceitunas"
+    },
+    {
+        "name": "Aceitunas negras grupo C (1) en baldes PVC x 3 Kg.",
+        "variety": "Aceitunas negras",
+        "presentation": "En baldes PVC x 3Kg.",
+        "producer": "PERLAS MENDOCINAS",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "aceitunas"
+    },
+    {
+        "name": "Aceitunas verdes grupo D (2) en baldes PVC x 5 Kg.",
+        "variety": "Aceitunas verdes",
+        "presentation": "En baldes PVC x 5Kg.",
+        "producer": "PERLAS MENDOCINAS",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "aceitunas"
+    },
+    {
+        "name": "Aceitunas negras grupo D (3) en baldes PVC x 5 Kg.",
+        "variety": "Aceitunas negras",
+        "presentation": "En baldes PVC x 5Kg.",
+        "producer": "PERLAS MENDOCINAS",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "aceitunas"
+    },
+    {
+        "name": "Pimientos morrones frasco x 295 gr.",
+        "variety": "Pimientos morrones",
+        "presentation": "Frasco x 295 gr.",
+        "producer": "ILLAPEL (Procedencia Mendoza)",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "pimientos"
+    },
+    {
+        "name": "Cerezas al maraschino frasco x 170 gr.",
+        "variety": "Cerezas al maraschino",
+        "presentation": "Frasco x 170 gr.",
+        "producer": "ILLAPEL (Procedencia Mendoza)",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "cerezas"
+    },
+    {
+        "name": "Tomate triturado x 500 gr.",
+        "variety": "Tomate triturado",
+        "presentation": "x 500 gr.",
+        "producer": "ILLAPEL (Procedencia Mendoza)",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "tomate"
+    },
+    {
+        "name": "Frasco de Mermelada de Membrillo x 430 gr.",
+        "variety": "Mermelada",
+        "presentation": "Caja x 5 kg.",
+        "producer": "ILLAPEL (Procedencia Mendoza)",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "dulce"
+    },
+    {
+        "name": "Dulce de Membrillo Caja x 5 kg.",
+        "variety": "Membrillo",
+        "presentation": "Caja x 1 kg.",
+        "producer": "ILLAPEL (Procedencia Mendoza)",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "dulce"
+    },
+    {
+        "name": "Dulce de Membrillo Caja x 1 kg.",
+        "variety": "Membrillo",
+        "presentation": "Caja x 5 kg.",
+        "producer": "ILLAPEL (Procedencia Mendoza)",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "dulce"
+    },
+    {
+        "name": "Dulce de Membrillo con nuez Caja x 1 kg.",
+        "variety": "Membrillo con nuez",
+        "presentation": "Caja x 1 kg.",
+        "producer": "ILLAPEL (Procedencia Mendoza)",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "dulce"
+    },
+    {
+        "name": "Dulce de Membrillo Caja x 5 kg.",
+        "variety": "Membrillo",
+        "presentation": "Caja x 5 kg.",
+        "producer": "ILLAPEL (Procedencia Mendoza)",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "dulce"
+    },
+    {
+        "name": "Mermelada de Membrillo Envase cartón x 10 kg.",
+        "variety": "Mermelada",
+        "presentation": "Envase cartón x 10 kg.",
+        "producer": "ILLAPEL (Procedencia Mendoza)",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "dulce"
+    },
+    {
+        "name": "Aji lococo en escabeche x 360 gr.",
+        "variety": "En escabeche",
+        "presentation": "x 360 gr.",
+        "producer": "ATACOPAMPA (Procedencia Las Lajitas - Salta)",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "encurtidos"
+    },
+    {
+        "name": "Ajies en vinagre de Alcohol – Aji de Pizza - x 360 gr.",
+        "variety": "En vinagre de alcohol/Ají de pizza",
+        "presentation": "x 360 gr.",
+        "producer": "ATACOPAMPA (Procedencia Las Lajitas - Salta)",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "encurtidos"
+    },
+    {
+        "name": "Berenjenas con pimientos aumados en escabeche x 360 gr.",
+        "variety": "En escabeche",
+        "presentation": "x 360 gr.",
+        "producer": "ATACOPAMPA (Procedencia Las Lajitas - Salta)",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "encurtidos"
+    },
+    {
+        "name": "Berenjenas en escabeche x 360 gr.",
+        "variety": "En escabeche",
+        "presentation": "x 360 gr.",
+        "producer": "ATACOPAMPA (Procedencia Las Lajitas - Salta)",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "encurtidos"
+    },
+    {
+        "name": "Cebollas caramelizadas con ajies locoto en escab. ahumado x 360 gr.",
+        "variety": "En escabeche",
+        "presentation": "x 360 gr.",
+        "producer": "ATACOPAMPA (Procedencia Las Lajitas - Salta)",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "encurtidos"
+    },
+    {
+        "name": "Cebollas caramelizadas en escabeche x 360 gr.",
+        "variety": "En escabeche",
+        "presentation": "x 360 gr.",
+        "producer": "ATACOPAMPA (Procedencia Las Lajitas - Salta)",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "encurtidos"
+    },
+    {
+        "name": "Garbanzos en escabeche x 360 gr.",
+        "variety": "En escabeche",
+        "presentation": "x 360 gr.",
+        "producer": "ATACOPAMPA (Procedencia Las Lajitas - Salta)",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "encurtidos"
+    },
+    {
+        "name": "Hongos en escabeche x 360 gr.",
+        "variety": "En escabeche",
+        "presentation": "x 360 gr.",
+        "producer": "ATACOPAMPA (Procedencia Las Lajitas - Salta)",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "encurtidos"
+    },
+    {
+        "name": "Pepinos agridulces en escabeche x 360 gr.",
+        "variety": "En escabeche",
+        "presentation": "x 360 gr.",
+        "producer": "ATACOPAMPA (Procedencia Las Lajitas - Salta)",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "encurtidos"
+    },
+    {
+        "name": "Pimientos en escabeche x 360 gr.",
+        "variety": "En escabeche",
+        "presentation": "x 360 gr.",
+        "producer": "ATACOPAMPA (Procedencia Las Lajitas - Salta)",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "encurtidos"
+    },
+    {
+        "name": "Porotos blancos en escabeche x 360 gr.",
+        "variety": "En escabeche",
+        "presentation": "x 360 gr.",
+        "producer": "ATACOPAMPA (Procedencia Las Lajitas - Salta)",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "encurtidos"
+    },
+    {
+        "name": "Porotos negros en escabeche x 360 gr.",
+        "variety": "En escabeche",
+        "presentation": "x 360 gr.",
+        "producer": "ATACOPAMPA (Procedencia Las Lajitas - Salta)",
+        "category": "dulces-y-encurtidos",
+        "subcategory": "encurtidos"
+    }
+]
