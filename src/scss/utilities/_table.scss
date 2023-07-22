@@ -13,16 +13,21 @@
 		border: 0;
 		color: $colorRed;
 	}
+
+	& .row-table {
+		display: flex;
+		justify-content: space-between;
+
+		& .row-table-info {
+			display: flex;
+			justify-content: space-between;
+		}
+	}
 }
 
 @media (max-width: 767px) {
-	.mobile-row .mobile-info {
-		display: block;
-		margin-bottom: 10px;
-	}
-
-	.mobile-row .mobile-buttons {
+	.row-table-info {
 		display: flex;
-		justify-content: flex-end;
+		flex-direction: column;
 	}
 }

@@ -109,20 +109,20 @@ const ItemListContainer = ({ categoria }) => {
             <table className="table">
               <tbody>
                 {groupedProducts[productor].map((product) => (
-                  <tr key={product.nombre} className="mobile-row">
-                    <td colSpan={12}>
-                      <div className="mobile-info">
-                        <span className="name-product-classification">
+                  <tr key={product.nombre}>
+                    <td colSpan={12} className="row-table">
+                      <div className="row-table-info col-6 col-md-8 col-lg-10">
+                        <span className="name-product-classification col-md-4">
                           {product.nombre}
                         </span>
-                        <span className="item-classification">
+                        <span className="item-classification col-md-4">
                           | {product.variedad}
                         </span>
-                        <span className="item-classification">
+                        <span className="item-classification col-md-4">
                           | {product.presentacion}
                         </span>
                       </div>
-                      <div className="mobile-buttons">
+                      <div className="col-6 col-md-4 col-lg-2 d-flex justify-content-end">
                         <button className="btn-products">
                           <img
                             src={"../img/icons/minus-red.png"}

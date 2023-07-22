@@ -22,3 +22,12 @@
 		}
 	}
 }
+
+@media (max-width: 767px) {
+	#navbar-products {
+		& .navbar-nav {
+			justify-content: space-between;
+			align-items: center;
+		}
+	}
+}
