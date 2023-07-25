@@ -49,7 +49,7 @@ const CardsCategories = () => {
   return (
     <div id="container-cards-home" className="row">
       {cards.map((card) => (
-        <NavLink to={card.link} className="card" id={card.id}>
+        <NavLink to={card.link} className="card" id={card.id} key={card.id}>
           <div className="card-body">
             <p className="bold card-text text-uppercase">{card.category}</p>
           </div>

@@ -1,0 +1,5 @@
+@import "../../utilities/btn";
+
+.btn-login-nav {
+    @include btns($colorBlue, $colorRed, #fff);
+}

@@ -20,15 +20,20 @@
 				background-color: #039ca100;
 				border: 0;
 				border-bottom: 1px solid $colorRed;
-			}
-
-			& input::placeholder {
-				padding-left: 40px;
 				color: $colorBlue;
+			}
+	
+			& input::placeholder {
+				color: $colorBlue;
+			}
+	
+			& .input-with-icon {
+				padding-left: 60px;
+				background-repeat: no-repeat;
+				background-position: 5px center;
 			}
 
 			& .input-with-icon {
-				padding-left: 30px;
 				background-repeat: no-repeat;
 				background-position: 5px center;
 			}
