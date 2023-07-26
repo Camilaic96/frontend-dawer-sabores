@@ -6,7 +6,6 @@ import { SessionContext } from '../context/SessionContext';
 
 const NavBar = () => {
 	const { user } = useContext(SessionContext);
-	console.log(user);
 	const itemsNav = [
 		{
 			id: 'products',

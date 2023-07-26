@@ -1,35 +1,46 @@
-import React from 'react';
-import { useFetch } from './useFetch';
+import { useContext, useState, useEffect } from 'react';
+import { SessionContext } from '../context/SessionContext';
+import ItemCount from './ItemCount';
 
 const ItemListContainer = ({ category }) => {
-	const { data, loading, error } = useFetch(
-		'http://localhost:8080/api/products',
-		'GET',
-	);
+	const { getAllProducts, addItem, user } = useContext(SessionContext);
+	const [products, setProducts] = useState(null);
+	const [item, setItem] = useState(null);
 
-	if (loading) {
-		return <p>Loading . . .</p>;
-	}
+	useEffect(() => {
+		const fetchProducts = async () => {
+			try {
+				const products = await getAllProducts();
+				setProducts(products);
+			} catch (error) {
+				console.log(error);
+			}
+		};
+		fetchProducts();
+	}, [getAllProducts]);
 
-	const { payload } = data;
-	const products = [...payload];
-
-	console.log(category);
-	const filteredProducts = products.filter(
+	const filteredProducts = products?.filter(
 		product => product.category === category,
 	);
 
 	const groupedProducts = {};
-	filteredProducts.forEach(product => {
+	filteredProducts?.forEach(product => {
 		if (!groupedProducts[product.producer]) {
 			groupedProducts[product.producer] = [];
 		}
 		groupedProducts[product.producer].push(product);
 	});
 
+	const onAdd = (item, quantity) => {
+		console.log(item);
+		console.log(quantity);
+		console.log(user);
+		addItem(item, quantity, user);
+	};
+
 	return (
 		<div className="p-3">
-			{data &&
+			{products &&
 				Object.keys(groupedProducts).map(producer => (
 					<div key={producer} className="container-classification">
 						<h4 className="title-classification">{producer}</h4>
@@ -37,7 +48,7 @@ const ItemListContainer = ({ category }) => {
 							<table className="table">
 								<tbody>
 									{groupedProducts[producer].map(product => (
-										<tr key={product.name}>
+										<tr key={product._id}>
 											<td colSpan={12} className="row-table">
 												<div className="row-table-info col-6 col-md-8 col-lg-10">
 													<span className="name-product-classification col-md-4">
@@ -50,27 +61,7 @@ const ItemListContainer = ({ category }) => {
 														| {product.presentation}
 													</span>
 												</div>
-												<div className="col-6 col-md-4 col-lg-2 d-flex justify-content-end">
-													<button className="btn-products">
-														<img
-															src={'../img/icons/minus-red.png'}
-															alt="minus sign"
-														/>
-													</button>
-													<button className="btn-products">0</button>
-													<button className="btn-products">
-														<img
-															src={'../img/icons/plus-red.png'}
-															alt="plus sign"
-														/>
-													</button>
-													<button className="btn-products ms-4">
-														<img
-															src={'../img/icons/check-box-red.png'}
-															alt="check box"
-														/>
-													</button>
-												</div>
+												<ItemCount product={product} onAdd={onAdd} />
 											</td>
 										</tr>
 									))}

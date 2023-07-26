@@ -1,4 +1,7 @@
+import useUser from '../hooks/useUser';
+
 const btnAccount = () => {
+	const { logout } = useUser();
 	return (
 		<div className="dropdown mx-3">
 			<button
@@ -16,9 +19,7 @@ const btnAccount = () => {
 					</a>
 				</li>
 				<li>
-					<a href="/api/auth/logout" className="dropdown-item">
-						Cerrar sesión
-					</a>
+					<button onClick={logout}>Cerrar Sesión</button>
 				</li>
 			</ul>
 		</div>

@@ -1,28 +1,29 @@
 import { useContext, useState, useEffect } from 'react';
 import { SessionContext } from '../context/SessionContext';
 const Cart = () => {
-	const { getCart, user } = useContext(SessionContext);
-	const [cartData, setCartData] = useState(null); // Estado para almacenar los datos del carrito
+	const { cart } = useContext(SessionContext);
+	const [cartData, setCartData] = useState(null);
 
 	useEffect(() => {
-		// Llama a la función getCart y utiliza async/await para esperar la respuesta
-		const fetchCartData = async () => {
+		const fetchCartData = () => {
 			try {
-				const cart = await getCart(user);
-				setCartData(cart); // Guarda los datos del carrito en el estado
+				console.log(cart);
+				setCartData(cart);
 			} catch (error) {
 				console.log(error);
 			}
 		};
-		fetchCartData();
-	}, [getCart, user]);
 
-	// Comprueba si los datos del carrito están cargados y muestra el contenido
+		if (cart && cart.length > 0) {
+			fetchCartData();
+		}
+	}, [cart]);
+
 	if (!cartData) {
 		return <p>Cargando el carrito...</p>;
 	}
 
-	const products = cartData.products.map(product => ({
+	const products = cartData?.products?.map(product => ({
 		name: product.product.name,
 		variety: product.product.variety,
 		presentation: product.product.presentation,

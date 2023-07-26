@@ -1,5 +1,3 @@
-import Cookies from 'js-cookie';
-
 export default function login({ email, password }) {
 	const obj = {
 		email,
@@ -11,10 +9,12 @@ export default function login({ email, password }) {
 	};
 	const method = 'POST';
 	const body = JSON.stringify(obj);
+	const credentials = 'include';
 	return fetch(url, {
 		headers,
 		method,
 		body,
+		credentials,
 	})
 		.then(response =>
 			response.redirected
@@ -22,9 +22,7 @@ export default function login({ email, password }) {
 				: response.json(),
 		)
 		.then(data => {
-			const { payload } = data;
-			const user = payload;
-			Cookies.set('user', JSON.stringify(user), { expires: 1 });
+			const user = data.payload;
 			return user;
 		})
 		.catch(error => console.log(error));
