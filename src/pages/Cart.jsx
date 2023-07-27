@@ -1,10 +1,8 @@
-import { useContext, useState, useEffect } from 'react';
+import { useContext } from 'react';
 import { SessionContext } from '../context/SessionContext';
-import useCart from '../hooks/useCart';
 
 const Cart = () => {
-	const { user, cart } = useContext(SessionContext);
-	const { getCart, isCartLoading, hasCartError } = useCart();
+	const { cart } = useContext(SessionContext);
 
 	if (!cart) {
 		return <p>Cargando el carrito...</p>;
@@ -18,8 +16,10 @@ const Cart = () => {
 		status: product.product.status,
 		category: product.product.category,
 		subcategory: product.product.subcategory,
+		price: product.product.price,
 		_id: product.product._id,
 		quantity: product.quantity,
+		total: product.quantity * product.product.price,
 	}));
 
 	return (
@@ -31,7 +31,7 @@ const Cart = () => {
 						{products &&
 							products.map(product => (
 								<tr key={product._id}>
-									<td scope="col" colSpan={4}>
+									<td scope="col">
 										<div className="d-flex align-items-center">
 											<button className="btn-products">
 												<img
@@ -46,22 +46,22 @@ const Cart = () => {
 									<td
 										scope="col"
 										className="align-middle item-classification text-start"
-										colSpan={3}
 									>
 										| {product.variety}
 									</td>
 									<td
 										scope="col"
 										className="align-middle item-classification  text-start"
-										colSpan={3}
 									>
 										| {product.presentation}
 									</td>
 									<td
 										scope="col"
-										className="align-middle item-classification"
-										colSpan={2}
+										className="align-middle item-classification  text-start"
 									>
+										| {product.total}
+									</td>
+									<td scope="col" className="align-middle item-classification">
 										<div className="d-flex align-items-center justify-content-end mx-5">
 											<button className="btn-products">
 												<img

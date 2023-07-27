@@ -4,7 +4,7 @@ import Home from './pages/Home.jsx';
 import Footer from './components/Footer.jsx';
 import Header from './components/Header.jsx';
 import Categories from './pages/Categories.jsx';
-import Cart from './components/Cart.jsx';
+import Cart from './pages/Cart.jsx';
 import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
 // import ForgotPass from "./components/users/ForgotPass.jsx";

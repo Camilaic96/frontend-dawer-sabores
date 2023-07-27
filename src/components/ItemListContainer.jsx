@@ -1,11 +1,12 @@
 import { useContext, useState, useEffect } from 'react';
 import { SessionContext } from '../context/SessionContext';
 import ItemCount from './ItemCount';
+import useCart from '../hooks/useCart';
 
 const ItemListContainer = ({ category }) => {
-	const { getAllProducts, addItem, user } = useContext(SessionContext);
+	const { getAllProducts, user } = useContext(SessionContext);
 	const [products, setProducts] = useState(null);
-	const [item, setItem] = useState(null);
+	const { createProductInCart, deleteProductOfCart, getCart } = useCart();
 
 	useEffect(() => {
 		const fetchProducts = async () => {
@@ -19,6 +20,13 @@ const ItemListContainer = ({ category }) => {
 		fetchProducts();
 	}, [getAllProducts]);
 
+	useEffect(() => {
+		if (user?.cart) {
+			console.log('user.cart:', user.cart);
+			getCart(user.cart);
+		}
+	}, [user, getCart]);
+
 	const filteredProducts = products?.filter(
 		product => product.category === category,
 	);
@@ -31,8 +39,12 @@ const ItemListContainer = ({ category }) => {
 		groupedProducts[product.producer].push(product);
 	});
 
-	const onAdd = (item, quantity) => {
-		addItem(item, quantity, user);
+	const onAdd = async (item, quantity) => {
+		await createProductInCart(user.cart, item._id, quantity);
+	};
+
+	const onDelete = async item => {
+		await deleteProductOfCart(user.cart, item._id);
 	};
 
 	return (
@@ -48,17 +60,24 @@ const ItemListContainer = ({ category }) => {
 										<tr key={product._id}>
 											<td colSpan={12} className="row-table">
 												<div className="row-table-info col-6 col-md-8 col-lg-10">
-													<span className="name-product-classification col-md-4">
+													<span className="name-product-classification col-md-3 p-3">
 														{product.name}
 													</span>
-													<span className="item-classification col-md-4">
+													<span className="item-classification col-md-3 p-3">
 														| {product.variety}
 													</span>
-													<span className="item-classification col-md-4">
+													<span className="item-classification col-md-3 p-3">
 														| {product.presentation}
 													</span>
+													<span className="item-classification col-md-3 p-3">
+														| ${product.price}
+													</span>
 												</div>
-												<ItemCount product={product} onAdd={onAdd} />
+												<ItemCount
+													product={product}
+													onAdd={onAdd}
+													onDelete={onDelete}
+												/>
 											</td>
 										</tr>
 									))}
