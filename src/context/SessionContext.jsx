@@ -16,32 +16,6 @@ const SessionContextProvider = ({ children }) => {
 		}
 	}, []);
 
-	useEffect(() => {
-		console.log('llega al useEffect para el fetch de cart');
-		if (idCart) {
-			console.log('entra en el if');
-			console.log(idCart);
-			const url = `http://localhost:8080/api/carts/${idCart}`;
-			const headers = {
-				'Content-Type': 'application/json',
-			};
-
-			fetch(url, {
-				headers,
-			})
-				.then(response => response.json())
-				.then(data => {
-					const cartUser = data.payload;
-					setCart(cartUser);
-					console.log(cart);
-				})
-				.catch(error => {
-					console.error(error);
-					setCart([]); // Establecer el carrito en un array vacío en caso de error
-				});
-		}
-	}, [idCart]);
-
 	const getAllProducts = () => {
 		const url = 'http://localhost:8080/api/products';
 		const method = 'GET';
@@ -61,16 +35,9 @@ const SessionContextProvider = ({ children }) => {
 		return products;
 	};
 
-	const logout = () => {
-		Cookies.remove('user');
-		setUser(null);
-		// Realizar cualquier otra operación relacionada con el cierre de sesión aquí
-	};
-
 	const addItem = (item, quantity, user) => {
 		const cid = user.cart;
 		const pid = item._id;
-		console.log(cid, pid);
 		const url = `http://localhost:8080/api/carts/${cid}/products/${pid}`;
 		const method = 'POST';
 		const headers = {
@@ -84,7 +51,6 @@ const SessionContextProvider = ({ children }) => {
 		})
 			.then(response => response.json())
 			.then(data => {
-				console.log(data);
 				const cart = data.payload;
 				return cart;
 			})
@@ -126,7 +92,6 @@ const SessionContextProvider = ({ children }) => {
 				cart,
 				setCart,
 				getAllProducts,
-				logout,
 				addItem,
 			}}
 		>

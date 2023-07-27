@@ -32,9 +32,6 @@ const ItemListContainer = ({ category }) => {
 	});
 
 	const onAdd = (item, quantity) => {
-		console.log(item);
-		console.log(quantity);
-		console.log(user);
 		addItem(item, quantity, user);
 	};
 

@@ -12,29 +12,23 @@ const Register = () => {
 		const { name, value } = e.target;
 		if (name === 'firstName') {
 			setFirstName(value);
-			console.log(value);
 		}
 		if (name === 'lastName') {
 			setLastName(value);
-			console.log(value);
 		}
 		if (name === 'age') {
 			setAge(value);
-			console.log(value);
 		}
 		if (name === 'email') {
 			setEmail(value);
-			console.log(value);
 		}
 		if (name === 'password') {
 			setPassword(value);
-			console.log(value);
 		}
 	}
 
 	async function handleSubmit(e) {
 		e.preventDefault();
-		// auth.setIsAuthenticated(true);
 		const obj = {
 			first_name: firstName,
 			last_name: lastName,

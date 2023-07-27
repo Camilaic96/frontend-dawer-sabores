@@ -1,13 +1,15 @@
 import { useCallback, useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { SessionContext } from '../context/SessionContext';
-import loginService from '../services/login';
-import logoutService from '../services/logout';
+import loginService from '../services/login.service';
+import logoutService from '../services/logout.service';
 import Cookies from 'js-cookie';
+import useCart from './useCart';
 
 export default function useUser() {
-	const { user, setUser, idCart, setIdCart } = useContext(SessionContext);
+	const { user, setUser, setCart } = useContext(SessionContext);
 	const [state, setState] = useState({ loading: false, error: false });
+	const { getCart } = useCart();
 
 	const navigate = useNavigate();
 
@@ -16,18 +18,18 @@ export default function useUser() {
 			setState({ loading: true, error: false });
 			try {
 				const userData = await loginService({ email, password });
-				window.localStorage.setItem('dawer-sabores', JSON.stringify(userData));
+				Cookies.set('user', JSON.stringify(userData));
 				setState({ loading: false, error: false });
 				setUser(userData);
-				setIdCart(userData.cart);
+				getCart(userData.cart);
 				navigate('/productos/vinos-y-bebidas');
 			} catch (err) {
-				window.localStorage.removeItem('dawer-sabores');
+				window.localStorage.removeItem('user');
 				setState({ loading: false, error: true });
 				console.error(err);
 			}
 		},
-		[setUser, setIdCart],
+		[setUser],
 	);
 
 	const logout = useCallback(async () => {
@@ -35,16 +37,16 @@ export default function useUser() {
 
 		try {
 			await logoutService();
-			Cookies.remove('dawer-sabores');
+			Cookies.remove('user');
 			setState({ loading: false, error: false });
 			setUser(null);
-			setIdCart(null);
+			setCart(null);
 			navigate('/');
 		} catch (err) {
 			console.error(err);
 			setState({ loading: false, error: true });
 		}
-	}, [setUser, setIdCart]);
+	}, [setUser, setCart]);
 
 	return {
 		isLogged: Boolean(user),

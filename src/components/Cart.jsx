@@ -1,29 +1,16 @@
 import { useContext, useState, useEffect } from 'react';
 import { SessionContext } from '../context/SessionContext';
+import useCart from '../hooks/useCart';
+
 const Cart = () => {
-	const { cart } = useContext(SessionContext);
-	const [cartData, setCartData] = useState(null);
+	const { user, cart } = useContext(SessionContext);
+	const { getCart, isCartLoading, hasCartError } = useCart();
 
-	useEffect(() => {
-		const fetchCartData = () => {
-			try {
-				console.log(cart);
-				setCartData(cart);
-			} catch (error) {
-				console.log(error);
-			}
-		};
-
-		if (cart && cart.length > 0) {
-			fetchCartData();
-		}
-	}, [cart]);
-
-	if (!cartData) {
+	if (!cart) {
 		return <p>Cargando el carrito...</p>;
 	}
 
-	const products = cartData?.products?.map(product => ({
+	const products = cart?.products?.map(product => ({
 		name: product.product.name,
 		variety: product.product.variety,
 		presentation: product.product.presentation,

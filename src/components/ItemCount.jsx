@@ -4,9 +4,6 @@ import { SessionContext } from '../context/SessionContext';
 const ItemCount = ({ product, onAdd }) => {
 	const { user, cart } = useContext(SessionContext);
 	const [counter, setCounter] = useState(0);
-	console.log(cart);
-
-	// revisar si el producto existe en el carrito. Si existe actualizar el contador al valor del quantity del carrito
 
 	const increaseCounter = () => {
 		if (counter < product.stock) {
