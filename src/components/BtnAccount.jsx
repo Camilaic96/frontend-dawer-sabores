@@ -1,25 +1,28 @@
 import useUser from '../hooks/useUser';
+import { Link } from 'react-router-dom';
 
 const btnAccount = () => {
 	const { logout } = useUser();
 	return (
-		<div className="dropdown mx-3">
+		<div className="dropdown btn-account mx-4">
 			<button
-				className="dropdown-toggle border-0 p-2"
+				className="dropdown-toggle border-0 d-flex align-items-center"
 				type="button"
 				data-bs-toggle="dropdown"
 				aria-expanded="false"
 			>
-				<img src={'../img/icons/account.png'} alt="search icon" />
+				<img src={'../img/icons/account.png'} width={32} alt="search icon" />
 			</button>
-			<ul className="dropdown-menu fs-4">
+			<ul className="dropdown-menu dropdown-menu-end fs-4">
 				<li>
-					<a href="/api/profile" className="dropdown-item">
+					<Link to={'/profile'} className="li-btn-account">
 						Perfil
-					</a>
+					</Link>
 				</li>
 				<li>
-					<button onClick={logout}>Cerrar Sesión</button>
+					<button onClick={logout} className="li-btn-account">
+						Cerrar Sesión
+					</button>
 				</li>
 			</ul>
 		</div>

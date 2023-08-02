@@ -1,4 +1,4 @@
-@import "../btn/btn-login";
+@import "../../utilities/btn";
 
 #navbar-header {
 	margin: 10px;
@@ -23,5 +23,36 @@
 	& .filter{
 		border: 0;
 		border-bottom: 1px solid $colorRed;
+	}
+
+	& .btn-login-nav, .btn-login-nav:hover {
+		@include btns($colorBlue, $colorRed, #fff);
+	}
+
+	& .btn-account {
+		& .dropdown-toggle::after {
+			display: none;
+		}
+		
+		& .dropdown-toggle {
+			background-color: #fff;
+		}
+		
+		& .dropdown-menu {
+			margin-top: 15px;
+			padding: 10px;
+			border: 2px solid $colorBlue;
+			background-color: #cbf3f5c9;
+		}
+
+		& .li-btn-account {
+			background: none;
+			border: none;
+			color: $colorRed;
+			padding: 0;
+			text-transform: uppercase;
+			font-size: 16px;
+			font-weight: bold;
+		}
 	}
 }

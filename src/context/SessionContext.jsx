@@ -7,6 +7,7 @@ export const SessionContext = createContext();
 const SessionContextProvider = ({ children }) => {
 	const [user, setUser] = useState(null);
 	const [cart, setCart] = useState({});
+	const [products, setProducts] = useState([]);
 
 	useEffect(() => {
 		const userCookie = Cookies.get('user');
@@ -18,25 +19,6 @@ const SessionContextProvider = ({ children }) => {
 		}
 	}, []);
 
-	const getAllProducts = () => {
-		const url = 'http://localhost:8080/api/products';
-		const method = 'GET';
-		const headers = {
-			'Content-Type': 'application/json',
-		};
-		const products = fetch(url, {
-			headers,
-			method,
-		})
-			.then(response => response.json())
-			.then(data => {
-				const products = data.payload;
-				return products;
-			})
-			.catch(error => setError(error));
-		return products;
-	};
-
 	return (
 		<SessionContext.Provider
 			value={{
@@ -44,7 +26,8 @@ const SessionContextProvider = ({ children }) => {
 				setUser,
 				cart,
 				setCart,
-				getAllProducts,
+				products,
+				setProducts,
 			}}
 		>
 			{children}

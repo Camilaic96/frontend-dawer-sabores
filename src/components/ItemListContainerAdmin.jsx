@@ -1,33 +1,21 @@
 import { useContext, useState, useEffect } from 'react';
 import { SessionContext } from '../context/SessionContext';
-import ItemCount from './ItemCount';
-import useCart from '../hooks/useCart';
+import ManagerAdmin from './ManagerAdmin';
 import useProducts from '../hooks/useProducts';
+import AddProduct from './AddProduct';
 
-const ItemListContainer = ({ category, subcategory }) => {
+const ItemListContainerAdmin = ({ category }) => {
 	const { user, products } = useContext(SessionContext);
-	const { createProductInCart, deleteProductOfCart, getCart } = useCart();
-	const { getProducts } = useProducts();
+	const { getProducts, deleteProduct } = useProducts();
 
 	useEffect(() => {
 		getProducts();
 	}, [getProducts]);
 
-	useEffect(() => {
-		if (user?.cart) {
-			console.log('user.cart:', user.cart);
-			getCart(user.cart);
-		}
-	}, [user.cart, getCart]);
+	const filteredProducts = products?.filter(
+		product => product.category === category,
+	);
 
-	const filteredProducts = subcategory
-		? products?.filter(
-				product =>
-					product.category === category && product.subcategory === subcategory,
-		  )
-		: products?.filter(product => product.category === category);
-
-	// Agrupa los productos filtrados por productor (como lo hacías previamente)
 	const groupedProducts = {};
 	filteredProducts?.forEach(product => {
 		if (!groupedProducts[product.producer]) {
@@ -36,16 +24,17 @@ const ItemListContainer = ({ category, subcategory }) => {
 		groupedProducts[product.producer].push(product);
 	});
 
-	const onAdd = async (item, quantity) => {
-		await createProductInCart(user.cart, item._id, quantity);
+	const onChange = async (item, quantity) => {
+		// await updateProduct(user.cart, item._id, quantity);
 	};
 
 	const onDelete = async item => {
-		await deleteProductOfCart(user.cart, item._id);
+		await deleteProduct(item._id);
 	};
 
 	return (
 		<div className="p-3">
+			<AddProduct />
 			{products &&
 				Object.keys(groupedProducts).map(producer => (
 					<div key={producer} className="container-classification">
@@ -70,9 +59,9 @@ const ItemListContainer = ({ category, subcategory }) => {
 														| ${product.price}
 													</span>
 												</div>
-												<ItemCount
+												<ManagerAdmin
 													product={product}
-													onAdd={onAdd}
+													onChange={onChange}
 													onDelete={onDelete}
 												/>
 											</td>
@@ -87,4 +76,4 @@ const ItemListContainer = ({ category, subcategory }) => {
 	);
 };
 
-export default ItemListContainer;
+export default ItemListContainerAdmin;

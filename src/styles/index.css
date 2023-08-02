@@ -22,17 +22,6 @@
   border: 10px solid white;
 }
 
-.btn-login-nav {
-  border: 3px solid #DF4948;
-  color: #138192;
-  border-radius: 50px;
-  font-weight: bold;
-  font-size: 20px;
-  margin: 10px;
-  padding: 10px 16px;
-  background-color: #fff;
-}
-
 #navbar-header {
   margin: 10px;
 }
@@ -53,6 +42,37 @@
 #navbar-header .filter {
   border: 0;
   border-bottom: 1px solid #DF4948;
+}
+#navbar-header .btn-login-nav, #navbar-header .btn-login-nav:hover {
+  border: 3px solid #DF4948;
+  color: #138192;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 20px;
+  margin: 10px;
+  padding: 10px 16px;
+  background-color: #fff;
+}
+#navbar-header .btn-account .dropdown-toggle::after {
+  display: none;
+}
+#navbar-header .btn-account .dropdown-toggle {
+  background-color: #fff;
+}
+#navbar-header .btn-account .dropdown-menu {
+  margin-top: 15px;
+  padding: 10px;
+  border: 2px solid #138192;
+  background-color: rgba(203, 243, 245, 0.7882352941);
+}
+#navbar-header .btn-account .li-btn-account {
+  background: none;
+  border: none;
+  color: #DF4948;
+  padding: 0;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 #container-cards-home {
@@ -205,7 +225,8 @@
   background-image: url("../img/icons/pencil-red.png");
 }
 #container-login .form-login .btn-form-login {
-  margin: 10px;
+  margin: 40px auto 0px auto;
+  max-width: 250px;
   padding: 10px 20px;
   border: 1px solid #138192;
   font-weight: bold;
@@ -216,6 +237,7 @@
   display: flex;
   justify-content: space-between;
   padding: 10px;
+  font-size: 18px;
 }
 #container-login .container-links-login p {
   color: #138192;
@@ -225,6 +247,13 @@
   font-weight: bold;
 }
 
+@media (max-width: 991px) {
+  #container-login .container-links-login {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
 #container-register {
   display: flex;
   flex-direction: column;
@@ -286,6 +315,89 @@
 #container-register .container-links-register p .link-register {
   color: #138192;
   font-weight: bold;
+}
+
+#profile {
+  position: relative;
+  left: 48%;
+  transform: translate(-50%, 0%);
+  margin: 100px 0;
+  padding: 30px;
+  padding-top: 0;
+  border: 4px solid #138192;
+  border-radius: 4px;
+  text-align: center;
+  color: #DF4948;
+}
+#profile .bold {
+  font-weight: bold;
+}
+#profile h2 {
+  display: inline-block;
+  position: relative;
+  top: -24px;
+  padding: 0 20px;
+  background-color: #fff;
+}
+#profile .container-profile {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+}
+
+#container-forgot-pass {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 600px);
+  margin: 50px auto;
+}
+#container-forgot-pass p {
+  align-self: start;
+  color: #DF4948;
+  font-weight: bold;
+}
+#container-forgot-pass .form-forgot-pass {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px;
+  background-color: rgba(3, 156, 161, 0.2);
+  border-radius: 10px;
+}
+#container-forgot-pass .form-forgot-pass input {
+  padding: 16px;
+  background-color: rgba(3, 156, 161, 0);
+  border: 0;
+  border-bottom: 1px solid #DF4948;
+  color: #138192;
+}
+#container-forgot-pass .form-forgot-pass input::-moz-placeholder {
+  color: #138192;
+}
+#container-forgot-pass .form-forgot-pass input::placeholder {
+  color: #138192;
+}
+#container-forgot-pass .form-forgot-pass .input-with-icon {
+  padding-left: 60px;
+  background-repeat: no-repeat;
+  background-position: 5px center;
+}
+#container-forgot-pass .form-forgot-pass .at {
+  background-image: url("../img/icons/at-red.png");
+}
+#container-forgot-pass .form-forgot-pass .pencil {
+  background-image: url("../img/icons/pencil-red.png");
+}
+#container-forgot-pass .form-forgot-pass .btn-form-forgot-pass {
+  margin: 40px auto 0px auto;
+  max-width: 250px;
+  padding: 10px 20px;
+  border: 1px solid #138192;
+  font-weight: bold;
+  background-color: #138192;
+  color: #fff;
 }
 
 #navbar-products {

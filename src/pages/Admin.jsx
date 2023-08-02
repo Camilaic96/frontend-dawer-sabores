@@ -1,16 +1,11 @@
+import ItemListContainerAdmin from '../components/ItemListContainerAdmin';
 import { useParams } from 'react-router-dom';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { SessionContext } from '../context/SessionContext';
-import Admin from './Admin';
-import ItemListContainer from '../components/ItemListContainer';
-import NavProducts from '../components/NavProducts';
-import FilterSubcategories from '../components/FilterSubcategories';
 
-const Categories = () => {
+const Admin = () => {
 	const { user } = useContext(SessionContext);
-
-	const [selectedSubcategory, setSelectedSubcategory] = useState(null);
-
+	console.log(user);
 	const categories = [
 		{
 			id: 'vinos-y-bebidas',
@@ -64,31 +59,11 @@ const Categories = () => {
 	const { id } = useParams();
 	const objActive = categories.find(category => category.id === id);
 
-	const backgroundImageStyle = {
-		backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(${objActive.backgroundImage})`,
-	};
-
-	const handleSubcategorySelect = subcategory => {
-		setSelectedSubcategory(subcategory);
-	};
-
 	return (
 		<div>
-			<NavProducts />
-			<div style={backgroundImageStyle} className="background-image">
-				<p className="bold text-categories">{objActive.text}</p>
-			</div>
-			<FilterSubcategories onSubcategorySelect={handleSubcategorySelect} />
-			{user && user?.role === 'ADMIN' ? (
-				<Admin />
-			) : (
-				<ItemListContainer
-					category={objActive.id}
-					subcategory={selectedSubcategory}
-				/>
-			)}
+			<ItemListContainerAdmin category={objActive.id} />
 		</div>
 	);
 };
 
-export default Categories;
+export default Admin;

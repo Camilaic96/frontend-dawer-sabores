@@ -31,7 +31,7 @@ const NavBar = () => {
 
 	return (
 		<nav className="navbar navbar-expand-lg row" id="navbar-header">
-			<div className="col-12 col-sm-6 col-lg-7">
+			<div className="col-12 col-sm-6 col-lg-8">
 				<button
 					className="navbar-toggler"
 					type="button"
@@ -58,8 +58,8 @@ const NavBar = () => {
 					</ul>
 				</div>
 			</div>
-			<div className="col-12 col-sm-6 col-lg-3 d-flex justify-content-end">
-				<form className="d-flex col-md-10" role="search">
+			<div className="col-12 col-sm-6 col-lg-4 d-flex justify-content-end align-items-center">
+				<form className="d-flex mx-3" role="search">
 					<button className="btn" type="submit">
 						<img src={'../img/icons/search-red.png'} alt="search icon" />
 					</button>
@@ -69,11 +69,11 @@ const NavBar = () => {
 						aria-label="Search"
 					/>
 				</form>
-				<NavLink to={'/carrito'}>
-					<img src={'../img/icons/cart-red.png'} alt="cart icon" />
-				</NavLink>
-			</div>
-			<div className="col-12 col-lg-2 d-flex justify-content-center">
+				{user && (
+					<NavLink to={'/carrito'} className={'mx-4'}>
+						<img src={'../img/icons/cart-red.png'} alt="cart icon" />
+					</NavLink>
+				)}
 				{!user ? <BtnLogin /> : <BtnAccount />}
 			</div>
 		</nav>

@@ -8,11 +8,11 @@ export default function useCart() {
 
 	const getCart = useCallback(
 		async idCart => {
+			console.log('entra en getCart en useCart');
 			setState({ loading: true, error: false });
 			try {
-				console.log('getCart called'); // Registra que se está llamando la función
 				const cartData = await cartServices.getCartService(idCart);
-				console.log('cartData:', cartData); // Registra los datos obtenidos del carrito
+				console.log('cartData en getCart en useCart:', cartData);
 				setState({ loading: false, error: false });
 				setCart(cartData);
 			} catch (err) {

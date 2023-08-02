@@ -1,40 +1,11 @@
-const getCartService = async idCart => {
-	const url = `http://localhost:8080/api/carts/${idCart}`;
-	const method = 'GET';
+const login = async obj => {
+	const url = 'http://localhost:8080/api/auth';
 	const headers = {
 		'Content-Type': 'application/json',
 	};
-	const credentials = 'include';
-
-	return fetch(url, {
-		headers,
-		method,
-		credentials,
-	})
-		.then(response =>
-			response.redirected
-				? (window.location.href = response.url)
-				: response.json(),
-		)
-		.then(data => {
-			const cart = data.payload;
-			console.log(cart);
-			return cart;
-		})
-		.catch(error => console.log(error));
-};
-
-const createProductInCartService = async (idCart, idProduct, quantity) => {
-	const url = `http://localhost:8080/api/carts/${idCart}/products/${idProduct}`;
 	const method = 'POST';
-	const headers = {
-		'Content-Type': 'application/json',
-	};
-	const body = JSON.stringify({
-		quantity,
-	});
+	const body = JSON.stringify(obj);
 	const credentials = 'include';
-
 	return fetch(url, {
 		headers,
 		method,
@@ -47,19 +18,18 @@ const createProductInCartService = async (idCart, idProduct, quantity) => {
 				: response.json(),
 		)
 		.then(data => {
-			console.log(data);
-			const cart = data.payload;
-			return cart;
+			const user = data.payload;
+			return user;
 		})
 		.catch(error => console.log(error));
 };
 
-const deleteProductOfCartService = async (idCart, idProduct) => {
-	const url = `http://localhost:8080/api/carts/${idCart}/products/${idProduct}`;
-	const method = 'DELETE';
+const logout = async () => {
+	const url = 'http://localhost:8080/api/auth/logout';
 	const headers = {
 		'Content-Type': 'application/json',
 	};
+	const method = 'GET';
 	const credentials = 'include';
 
 	return fetch(url, {
@@ -78,8 +48,35 @@ const deleteProductOfCartService = async (idCart, idProduct) => {
 		.catch(error => console.log(error));
 };
 
+const register = async obj => {
+	const url = 'http://localhost:8080/api/users';
+	const headers = {
+		'Content-Type': 'application/json',
+	};
+	const method = 'POST';
+	const body = JSON.stringify(obj);
+
+	return fetch(url, {
+		headers,
+		method,
+		body,
+	})
+		.then(response =>
+			response.redirected
+				? (window.location.href = response.url)
+				: response.json(),
+		)
+		.then(data => {
+			console.log(data);
+			const user = data.payload;
+			console.log(user);
+			return user;
+		})
+		.catch(error => console.log(error));
+};
+
 export default {
-	getCartService,
-	createProductInCartService,
-	deleteProductOfCartService,
+	login,
+	logout,
+	register,
 };

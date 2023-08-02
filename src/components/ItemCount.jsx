@@ -1,24 +1,27 @@
 import { useState, useEffect, useContext } from 'react';
 import { SessionContext } from '../context/SessionContext';
+import useCart from '../hooks/useCart';
 
 const ItemCount = ({ product, onAdd, onDelete }) => {
-	const { cart } = useContext(SessionContext);
+	const { user, cart } = useContext(SessionContext);
 	const [counter, setCounter] = useState(0);
 	const [isLoading, setIsLoading] = useState(true);
 
+	const { getCart } = useCart();
+
 	useEffect(() => {
-		// Verifica si el carrito y sus productos ya se han obtenido del SessionContext
 		if (cart?.products?.length > 0) {
 			const cartProduct = cart.products.find(
 				item => item.product._id === product._id,
 			);
-
 			if (cartProduct) {
 				setCounter(cartProduct.quantity);
 			}
-			setIsLoading(false); // Establece isLoading como false para renderizar el componente
+			setIsLoading(false);
+		} else {
+			setIsLoading(false);
 		}
-	}, [cart, product]);
+	}, [getCart, product, user]);
 
 	const increaseCounter = () => {
 		if (counter < /* product.stock */ 20) {
@@ -47,12 +50,10 @@ const ItemCount = ({ product, onAdd, onDelete }) => {
 		setCounter(0);
 	};
 
-	// Si isLoading es true, muestra un mensaje de carga
 	if (isLoading) {
 		return <div>Cargando...</div>;
 	}
 
-	// Si isLoading es false, renderiza el componente normalmente
 	return (
 		<div className="container p-3">
 			<div className="col-6 col-md-4 col-lg-2 d-flex justify-content-end">

@@ -1,26 +1,58 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { SessionContext } from '../context/SessionContext';
+import ItemCount from '../components/ItemCount';
+import useCart from '../hooks/useCart';
 
 const Cart = () => {
-	const { cart } = useContext(SessionContext);
+	const { cart, user } = useContext(SessionContext);
+	const { createProductInCart, deleteProductOfCart, getCart } = useCart();
+	const [products, setProducts] = useState([]);
+	const [isLoading, setIsLoading] = useState(true);
 
-	if (!cart) {
+	useEffect(() => {
+		if (user?.cart) {
+			console.log('user.cart:', user.cart);
+			getCart(user.cart).then(() => setIsLoading(false));
+		}
+	}, [user, getCart]);
+
+	useEffect(() => {
+		const getProductsCart = () => {
+			console.log(cart);
+			const productsCart = cart?.products?.map(product => ({
+				name: product.product.name,
+				variety: product.product.variety,
+				presentation: product.product.presentation,
+				producer: product.product.producer,
+				status: product.product.status,
+				category: product.product.category,
+				subcategory: product.product.subcategory,
+				price: product.product.price,
+				_id: product.product._id,
+				quantity: product.quantity,
+				total: product.quantity * product.product.price,
+			}));
+			console.log(productsCart);
+			setProducts(productsCart);
+		};
+		getProductsCart();
+	}, [cart]);
+
+	const onAdd = async (item, quantity) => {
+		await createProductInCart(user.cart, item._id, quantity);
+		// Actualiza el carrito después de agregar el producto
+		getCart(user.cart);
+	};
+
+	const onDelete = async item => {
+		await deleteProductOfCart(user.cart, item._id);
+		// Actualiza el carrito después de eliminar el producto
+		getCart(user.cart);
+	};
+
+	if (isLoading) {
 		return <p>Cargando el carrito...</p>;
 	}
-
-	const products = cart?.products?.map(product => ({
-		name: product.product.name,
-		variety: product.product.variety,
-		presentation: product.product.presentation,
-		producer: product.product.producer,
-		status: product.product.status,
-		category: product.product.category,
-		subcategory: product.product.subcategory,
-		price: product.product.price,
-		_id: product.product._id,
-		quantity: product.quantity,
-		total: product.quantity * product.product.price,
-	}));
 
 	return (
 		<div className="offset-md-1 col-md-10">
@@ -61,22 +93,12 @@ const Cart = () => {
 									>
 										| {product.total}
 									</td>
-									<td scope="col" className="align-middle item-classification">
-										<div className="d-flex align-items-center justify-content-end mx-5">
-											<button className="btn-products">
-												<img
-													src={'../img/icons/minus-blue.png'}
-													alt="minus sign"
-												/>
-											</button>
-											<button className="btn-products">0</button>
-											<button className="btn-products">
-												<img
-													src={'../img/icons/plus-blue.png'}
-													alt="plus sign"
-												/>
-											</button>
-										</div>
+									<td>
+										<ItemCount
+											product={product}
+											onAdd={onAdd}
+											onDelete={onDelete}
+										/>
 									</td>
 								</tr>
 							))}
