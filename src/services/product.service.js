@@ -74,8 +74,32 @@ const addProductService = async newProduct => {
 		.catch(error => console.log(error));
 };
 
+const filteredProducts = async (products, category, subcategory) => {
+	try {
+		const filteredProducts = subcategory
+			? products?.filter(
+					product =>
+						product.category === category &&
+						product.subcategory === subcategory,
+			  )
+			: products?.filter(product => product.category === category);
+
+		const groupedProducts = {};
+		filteredProducts?.forEach(product => {
+			if (!groupedProducts[product.producer]) {
+				groupedProducts[product.producer] = [];
+			}
+			groupedProducts[product.producer].push(product);
+		});
+		return groupedProducts;
+	} catch (error) {
+		throw error;
+	}
+};
+
 export default {
 	getProductsService,
 	deleteProductService,
 	addProductService,
+	filteredProducts,
 };

@@ -1,15 +1,21 @@
 import { useState, useEffect, useContext } from 'react';
 import { SessionContext } from '../context/SessionContext';
 import { useParams } from 'react-router-dom';
+import useProducts from '../hooks/useProducts';
 
 const FilterSubcategories = ({ onSubcategorySelect }) => {
 	const { products } = useContext(SessionContext);
 	const { id } = useParams();
+	const { getProducts, isLoading } = useProducts();
 	const [subcategories, setSubcategories] = useState([]);
+	const [allProducts, setAllProducts] = useState([]);
+	const [activeSubcategory, setActiveSubcategory] = useState(null);
 
 	useEffect(() => {
-		console.log(products);
-		console.log(id);
+		getProducts();
+	}, [getProducts]);
+
+	useEffect(() => {
 		const currentCategory = id;
 		const uniqueSubcategories = [
 			...new Set(
@@ -18,9 +24,20 @@ const FilterSubcategories = ({ onSubcategorySelect }) => {
 					.map(product => product.subcategory),
 			),
 		];
-
 		setSubcategories(uniqueSubcategories);
+
+		setAllProducts(
+			products.filter(product => product.category === currentCategory),
+		);
 	}, [id, products]);
+
+	const handleSubcategoryClick = subcategory => {
+		if (activeSubcategory === subcategory) {
+			subcategory = null;
+		}
+		setActiveSubcategory(subcategory);
+		onSubcategorySelect(subcategory);
+	};
 
 	return (
 		<div className="container-filter">
@@ -46,9 +63,11 @@ const FilterSubcategories = ({ onSubcategorySelect }) => {
 					{subcategories.map(subcategory => (
 						<button
 							key={subcategory}
-							className="btn-filter-item"
+							className={`btn-filter-item ${
+								activeSubcategory === subcategory ? 'active' : ''
+							}`}
 							type="button"
-							onClick={() => onSubcategorySelect(subcategory)}
+							onClick={() => handleSubcategoryClick(subcategory)}
 						>
 							{subcategory}
 						</button>

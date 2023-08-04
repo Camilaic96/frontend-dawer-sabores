@@ -69,6 +69,7 @@ const Categories = () => {
 	};
 
 	const handleSubcategorySelect = subcategory => {
+		console.log(subcategory);
 		setSelectedSubcategory(subcategory);
 	};
 

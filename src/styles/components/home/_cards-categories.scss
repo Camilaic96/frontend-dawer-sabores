@@ -1,19 +1,16 @@
 #container-cards-home{
 	display: flex;
-	justify-content: center;
+	justify-content: space-evenly;
 	text-align: center;
 	position: relative;
 	top: 120px;
 	width: 100%;
-	margin: 20px;
 	font-weight: bold;
 	color: #fff;
 
 	& .card {
-		width: 15%;
-		min-width: 300px;
-		max-width: 400px;
-		height: 300px;
+		width: 280px;
+		height: 260px;
 		margin: 40px 10px;
 		padding: 0;
 		border: 0;

@@ -55,7 +55,7 @@ const ItemCount = ({ product, onAdd, onDelete }) => {
 	}
 
 	return (
-		<div className="container p-3">
+		<div className="container p-3 d-flex justify-content-end align-items-center">
 			<div className="col-6 col-md-4 col-lg-2 d-flex justify-content-end">
 				<button className="btn-products" onClick={decreaseCounter}>
 					<img src={'../img/icons/minus-red.png'} alt="minus sign" />

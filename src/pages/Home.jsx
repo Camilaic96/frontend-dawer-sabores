@@ -1,13 +1,13 @@
-import Banner from '../components/Banner';
-import CardsProducts from '../components/CardsCategories';
-import AboutUs from '../components/AboutUs';
-import FAQs from '../components/FAQs';
+import Banner from '../components/home/Banner';
+import CardsCategories from '../components/home/CardsCategories';
+import AboutUs from '../components/home/AboutUs';
+import FAQs from '../components/home/FAQs';
 
 const Home = () => {
 	return (
 		<div>
 			<Banner />
-			<CardsProducts />
+			<CardsCategories />
 			<AboutUs />
 			<FAQs />
 		</div>
