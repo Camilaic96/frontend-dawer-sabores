@@ -1,0 +1,27 @@
+#banner {
+    position: relative;
+    
+    & .carousel-indicators {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        bottom: -50px;
+        left: 0;
+        right: 0;
+        z-index: 10;
+
+        & .btn-banner {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: $colorRed;
+            border: 0;
+            margin: 5px;
+            cursor: pointer;
+            
+            &.active {
+            background-color: #cf3434;
+            }
+        }
+    }
+}

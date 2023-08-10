@@ -9,9 +9,9 @@ const ItemListContainer = ({ category, subcategory }) => {
 	const { user } = useContext(SessionContext);
 	const { createProductInCart, deleteProductOfCart, getCart } = useCart();
 	const { filteredProducts } = useProducts();
-	const [loading, setLoading] = useState(true);
 
 	const [products, setProducts] = useState([]);
+	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -38,43 +38,39 @@ const ItemListContainer = ({ category, subcategory }) => {
 	};
 
 	return (
-		<div className="p-3">
+		<div>
 			{loading ? (
 				<div>Cargando...</div>
 			) : (
 				Object.keys(products).map(producer => (
-					<div key={producer} className="container-classification">
-						<h4 className="title-classification">{producer}</h4>
-						<div className="body-classification">
-							<table className="table">
-								<tbody>
-									{products[producer].map(product => (
-										<tr key={product._id}>
-											<td colSpan={12} className="row-table">
-												<div className="row-table-info col-6 col-md-8 col-lg-10 align-items-center">
-													<span className="name-product-classification col-md-4 p-3">
-														{product.name}
-													</span>
-													<span className="item-classification col-md-3 p-3">
-														| {product.variety}
-													</span>
-													<span className="item-classification col-md-3 p-3">
-														| {product.presentation}
-													</span>
-													<span className="item-classification col-md-2 p-3">
-														| ${product.price}
-													</span>
-												</div>
-												<ItemCount
-													product={product}
-													onAdd={onAdd}
-													onDelete={onDelete}
-												/>
-											</td>
-										</tr>
-									))}
-								</tbody>
-							</table>
+					<div key={producer} className="container-table">
+						<h4 className="title-table">{producer}</h4>
+						<div className="body-table">
+							{products[producer].map(product => (
+								<div key={product._id} className="row-table">
+									<div className="row-table-info col-lg-10">
+										<div className="name-product-table col-md-3 col-lg-4">
+											{product.name}
+										</div>
+										<div className="item-table col-md-3 col-lg-3">
+											| {product.variety}
+										</div>
+										<div className="item-table col-md-3 col-lg-3">
+											| {product.presentation}
+										</div>
+										<div className="item-table col-md-3 col-lg-2">
+											| ${product.price}
+										</div>
+									</div>
+									<div className="count-table col-md-3 col-lg-2">
+										<ItemCount
+											product={product}
+											onAdd={onAdd}
+											onDelete={onDelete}
+										/>
+									</div>
+								</div>
+							))}
 						</div>
 					</div>
 				))

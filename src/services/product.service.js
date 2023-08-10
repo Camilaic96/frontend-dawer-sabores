@@ -74,7 +74,7 @@ const addProductService = async newProduct => {
 		.catch(error => console.log(error));
 };
 
-const filteredProducts = async (products, category, subcategory) => {
+const filteredProducts = (products, category, subcategory) => {
 	try {
 		const filteredProducts = subcategory
 			? products?.filter(

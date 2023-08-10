@@ -1,26 +1,67 @@
-.container-classification {
-	margin: 10px;
-	vertical-align: middle;
+.container-table {
+	margin: 20px;
 
-	& .title-classification {
+	& .title-table {
 		font-weight: bold;
 		text-transform: uppercase;
 		color: $colorRed;
 	}
 
-	& .body-classification {
-		display: flex;
-		align-items: center;
+	& .body-table {
 		padding: 20px;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
 
-		& .name-product-classification {
-			font-weight: bold;
-			color: $colorBlue;
-			
-		}
+		& .row-table {
+			padding: 15px;
+			border-bottom: 1px solid $colorRed;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			& .row-table-info {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+
+				& .name-product-table {
+					font-weight: bold;
+					color: $colorBlue;
+					padding: 10px;
+				}
+
+				& .item-table {
+					color: rgb(82, 82, 82);
+					padding: 10px;
+				}
+			}
 	
-		& .item-classification {
-			color: rgb(82, 82, 82);
+			& .count-table {
+				color: rgb(82, 82, 82);
+				padding: 10px;
+			}
+
+			& .btn-products {
+				margin: 0 10px;
+				background-color: #fff;
+				border: 0;
+				color: $colorRed;
+			}
+		}
+	}
+}
+
+@media (max-width: 767px) {
+	.container-table {
+		& .body-table {
+			& .row-table {
+				& .row-table-info {
+					flex-direction: column;
+					justify-content: start;
+					align-items: start;
+				}
+			}
 		}
 	}
 }

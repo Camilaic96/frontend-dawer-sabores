@@ -1,5 +1,6 @@
 @import "./navbar-products";
 @import "../../utilities/btn";
+@import "./list-products";
 
 .background-image {
 	min-height: 150px;
@@ -38,6 +39,3 @@
 		display: block;
 	}
 }
-
-@import "./list-products";
-@import "../../utilities/table";

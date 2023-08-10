@@ -8,11 +8,9 @@ export default function useCart() {
 
 	const getCart = useCallback(
 		async idCart => {
-			console.log('entra en getCart en useCart');
 			setState({ loading: true, error: false });
 			try {
 				const cartData = await cartServices.getCartService(idCart);
-				console.log('cartData en getCart en useCart:', cartData);
 				setState({ loading: false, error: false });
 				setCart(cartData);
 			} catch (err) {
@@ -62,11 +60,47 @@ export default function useCart() {
 		[setCart],
 	);
 
+	const getProductsCart = useCallback(
+		async idCart => {
+			setState({ loading: true, error: false });
+			try {
+				const cartData = await cartServices.getCartService(idCart);
+				const productsData = cartData.products;
+				const productsCart = await cartServices.getProductsCart(productsData);
+				setState({ loading: false, error: false });
+				console.log(productsCart);
+				return productsCart;
+			} catch (err) {
+				setState({ loading: false, error: true });
+				console.error(err);
+			}
+		},
+		[setCart],
+	);
+
+	const purchase = useCallback(
+		async idCart => {
+			setState({ loading: true, error: false });
+			try {
+				const ticketData = await cartServices.purchase(idCart);
+				console.log(ticketData);
+				setState({ loading: false, error: false });
+				return ticketData;
+			} catch (err) {
+				setState({ loading: false, error: true });
+				console.error(err);
+			}
+		},
+		[setCart],
+	);
+
 	return {
-		isCartLoading: state.loading,
-		hasCartError: state.error,
+		isLoading: state.loading,
+		hasError: state.error,
 		getCart,
 		createProductInCart,
 		deleteProductOfCart,
+		getProductsCart,
+		purchase,
 	};
 }

@@ -24,18 +24,26 @@ const ItemCount = ({ product, onAdd, onDelete }) => {
 	}, [getCart, product, user]);
 
 	const increaseCounter = () => {
-		if (counter < /* product.stock */ 20) {
-			const newCounter = counter + 1;
-			setCounter(newCounter);
-			handleAddToCart(newCounter);
+		if (user) {
+			if (counter < /* product.stock */ 20) {
+				const newCounter = counter + 1;
+				setCounter(newCounter);
+				handleAddToCart(newCounter);
+			}
+		} else {
+			alert('Debe iniciar sesión para empezar a comprar.');
 		}
 	};
 
 	const decreaseCounter = () => {
-		if (counter > 0) {
-			const newCounter = counter - 1;
-			setCounter(newCounter);
-			handleAddToCart(newCounter);
+		if (user) {
+			if (counter > 0) {
+				const newCounter = counter - 1;
+				setCounter(newCounter);
+				handleAddToCart(newCounter);
+			}
+		} else {
+			alert('Debe iniciar sesión para empezar a comprar.');
 		}
 	};
 
